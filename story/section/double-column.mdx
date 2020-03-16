@@ -1,0 +1,28 @@
+---
+menu: Section
+name: Double Column
+---
+
+import { DoubleColumnSection } from "../../src/index";
+import { Playground } from "docz";
+
+# Bullet Points
+
+## Simple
+
+<Playground>
+    <DoubleColumnSection 
+        left={<div style={{
+            width: '300px', 
+            height: '400px', 
+            backgroundColor: 'blue',
+            color: 'white',
+        }}>Left</div>}
+        right={<div style={{
+            width: '300px', 
+            height: '400px', 
+            backgroundColor: 'blue',
+            color: 'white',
+        }}>Right</div>}
+    />
+</Playground>

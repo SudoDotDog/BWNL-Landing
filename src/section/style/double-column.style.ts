@@ -7,17 +7,28 @@
 import { StyleManager, Styles } from "@sudoo/jss";
 import { landingStyleCollection } from "../../style";
 
-export const DoubleColumnSectionBase: Styles = {
+export const DoubleColumnSectionStyleBase: Styles = {
 
-    leading: {
-        marginBottom: '6px',
+    cover: {
+        display: 'flex',
+        flexWrap: 'wrap',
+        alignItems: 'center',
+        justifyContent: 'center',
     },
-    title: {
-
+    left: {
+        margin: '8px',
+        flex: 1,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
     },
-    description: {
-        marginTop: '8px',
+    right: {
+        margin: '8px',
+        flex: 1,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
     },
 };
 
-export const DoubleColumnSection: StyleManager = landingStyleCollection.hydrate('Section-Double-Column', DoubleColumnSectionBase);
+export const DoubleColumnSectionStyle: StyleManager = landingStyleCollection.hydrate('Section-Double-Column', DoubleColumnSectionStyleBase);

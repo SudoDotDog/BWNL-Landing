@@ -4,8 +4,10 @@
  * @description Double Column
  */
 
+import { Classes } from "@sudoo/jss";
 import * as React from "react";
 import { LandingTheme, ThemeProps, withTheme } from "../../theme";
+import { DoubleColumnSectionStyle } from "../style/double-column.style";
 
 export type DoubleColumnSectionProps = {
 
@@ -19,16 +21,27 @@ type DoubleColumnSectionWithThemeProps = DoubleColumnSectionProps & ThemeProps;
 
 class DoubleColumnSectionBase extends React.PureComponent<DoubleColumnSectionWithThemeProps> {
 
+    private readonly _doubleColumnStyle: Classes = DoubleColumnSectionStyle.use();
+
     public render() {
 
         const theme: LandingTheme = this.props.theme;
 
-        return (<div
+        return (<section
             style={this.props.style}
+            className={this._doubleColumnStyle.cover}
         >
-            <div>{this.props.left}</div>
-            <div>{this.props.right}</div>
-        </div>);
+            <div
+                className={this._doubleColumnStyle.left}
+            >
+                {this.props.left}
+            </div>
+            <div
+                className={this._doubleColumnStyle.right}
+            >
+                {this.props.right}
+            </div>
+        </section>);
     }
 }
 
