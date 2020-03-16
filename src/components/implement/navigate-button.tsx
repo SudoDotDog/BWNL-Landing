@@ -7,7 +7,7 @@
 import { Classes } from "@sudoo/jss";
 import * as React from "react";
 import { LandingTheme, ThemeProps, withTheme } from "../../theme";
-import { HeaderButtonStyle } from "../style/header-button.style";
+import { NavigateButtonStyle } from "../style/navigate-button.style";
 
 export type NavigateButtonProps = {
 
@@ -18,7 +18,7 @@ type NavigateButtonWithThemeProps = NavigateButtonProps & ThemeProps;
 
 class NavigateButtonBase extends React.PureComponent<NavigateButtonWithThemeProps> {
 
-    private readonly _headerButtonStyle: Classes = HeaderButtonStyle.use();
+    private readonly _navigateButtonStyle: Classes = NavigateButtonStyle.use();
 
     public render() {
 

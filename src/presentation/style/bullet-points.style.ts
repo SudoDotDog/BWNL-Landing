@@ -9,8 +9,14 @@ import { landingStyleCollection } from "../../style";
 
 export const BulletPointsStyleBase: Styles = {
 
-    blueColor: {
-        backgroundColor: 'blue',
+    cover: {
+
+    },
+    title: {
+
+    },
+    list: {
+        marginTop: '24px',
     },
 };
 

@@ -1,17 +1,17 @@
 /**
  * @author WMXPY
  * @namespace Landing_Components
- * @description Header Button Style
+ * @description Navigate Button Style
  */
 
 import { StyleManager, Styles } from "@sudoo/jss";
 import { landingStyleCollection } from "../../style";
 
-export const HeaderButtonStyleBase: Styles = {
+export const NavigateButtonStyleBase: Styles = {
 
     blueColor: {
         backgroundColor: 'blue',
     },
 };
 
-export const HeaderButtonStyle: StyleManager = landingStyleCollection.hydrate('Components-Header-Button', HeaderButtonStyleBase);
+export const NavigateButtonStyle: StyleManager = landingStyleCollection.hydrate('Components-Navigate-Button', NavigateButtonStyleBase);

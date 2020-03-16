@@ -7,6 +7,10 @@
 import * as React from "react";
 
 export type LandingTheme = {
+
+    readonly title: {
+        readonly presentationTitle: React.CSSProperties;
+    };
 };
 
 export type ThemeProps = {
@@ -16,6 +20,12 @@ export type ThemeProps = {
 const getDefaultTheme = (): LandingTheme => {
 
     return {
+
+        title: {
+            presentationTitle: {
+                fontSize: '24px',
+            },
+        },
     };
 };
 

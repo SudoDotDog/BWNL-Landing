@@ -4,5 +4,5 @@
  * @description Import
  */
 
-export * from "./implement/header-button";
+export * from "./implement/navigate-button";
 

@@ -10,3 +10,6 @@ export * from "./structure/import";
 export * from "./style";
 export * from "./theme";
 
+import { Register } from "@sudoo/jss";
+
+Register.setup();
