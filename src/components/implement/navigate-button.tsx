@@ -14,6 +14,7 @@ export type NavigateButtonProps = {
     readonly title: React.ReactNode;
 
     readonly onClick?: () => void;
+    readonly onHoverStatesChange?: (buttonHover: boolean) => void;
 
     readonly style?: React.CSSProperties;
 };
@@ -34,6 +35,14 @@ class NavigateButtonBase extends React.Component<NavigateButtonWithThemeProps, N
 
     private readonly _navigateButtonStyle: Classes = NavigateButtonStyle.use();
 
+    public constructor(props: NavigateButtonWithThemeProps) {
+
+        super(props);
+
+        this._handleOnEnter = this._handleOnEnter.bind(this);
+        this._handleOnLeave = this._handleOnLeave.bind(this);
+    }
+
     public render() {
 
         const theme: LandingTheme = this.props.theme;
@@ -51,11 +60,31 @@ class NavigateButtonBase extends React.Component<NavigateButtonWithThemeProps, N
                     : theme.color.majorColor.regular,
             }}
             onClick={this.props.onClick}
-            onMouseEnter={() => this.setState({ buttonHover: true })}
-            onMouseLeave={() => this.setState({ buttonHover: false })}
+            onMouseEnter={this._handleOnEnter}
+            onMouseLeave={this._handleOnLeave}
         >
             {this.props.title}
         </button>);
+    }
+
+    private _handleOnEnter(): void {
+
+        this._handleHoverChange(true);
+    }
+
+    private _handleOnLeave(): void {
+
+        this._handleHoverChange(false);
+    }
+
+    private _handleHoverChange(buttonHover: boolean): void {
+
+        if (this.props.onHoverStatesChange) {
+            this.props.onHoverStatesChange(buttonHover);
+        }
+        this.setState({
+            buttonHover,
+        });
     }
 
     private _isEmphasized(): boolean {

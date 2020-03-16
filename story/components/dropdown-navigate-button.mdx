@@ -13,9 +13,13 @@ import { Playground } from "docz";
 <Playground>
     <DropdownNavigateButton 
         title="Without Action"
-    />
+    >
+        <div style={{width: '300px', height: '400px', backgroundColor: 'black', color: 'white'}}>Menu</div>
+    </DropdownNavigateButton>
     <DropdownNavigateButton 
         title="With Action"
         onClick={() => console.log('Yeah!')}
-    />
+    >
+         <div style={{width: '300px', height: '400px', backgroundColor: 'black', color: 'white'}}>Menu</div>
+    </DropdownNavigateButton>
 </Playground>
