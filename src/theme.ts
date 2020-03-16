@@ -17,6 +17,7 @@ export type LandingTheme = {
     },
     readonly title: {
         readonly majorTitle: React.CSSProperties;
+        readonly minorTitle: React.CSSProperties;
         readonly subtitle: React.CSSProperties;
         readonly presentationTitle: React.CSSProperties;
     };
@@ -43,8 +44,11 @@ const getDefaultTheme = (): LandingTheme => {
             majorTitle: {
                 fontSize: '36px',
             },
+            minorTitle: {
+                fontSize: '28px',
+            },
             subtitle: {
-                fontSize: '20px',
+                fontSize: '18px',
                 fontWeight: 'normal',
             },
             presentationTitle: {
