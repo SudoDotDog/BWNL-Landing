@@ -16,7 +16,13 @@ export const BulletPointsStyleBase: Styles = {
 
     },
     list: {
-        marginTop: '24px',
+        marginTop: '16px',
+    },
+    point: {
+        marginTop: '5px',
+    },
+    leading: {
+        marginRight: '8px',
     },
 };
 

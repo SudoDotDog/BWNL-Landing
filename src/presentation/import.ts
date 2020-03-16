@@ -5,4 +5,5 @@
  */
 
 export * from "./implement/bullet-points";
+export * from "./implement/feature";
 

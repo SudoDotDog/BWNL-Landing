@@ -57,8 +57,12 @@ class BulletPointsBase extends React.PureComponent<BulletPointsWithThemeProps> {
 
             return (<div
                 key={index}
+                className={this._bulletPointsStyle.point}
             >
-                {this.props.leading && <span>{this.props.leading}</span>}
+                {this.props.leading &&
+                    <span className={this._bulletPointsStyle.leading}>
+                        {this.props.leading}
+                    </span>}
                 <span>{point}</span>
             </div>);
         });

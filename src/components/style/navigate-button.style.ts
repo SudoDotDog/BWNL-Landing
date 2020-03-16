@@ -9,8 +9,11 @@ import { landingStyleCollection } from "../../style";
 
 export const NavigateButtonStyleBase: Styles = {
 
-    blueColor: {
-        backgroundColor: 'blue',
+    button: {
+        border: '0px',
+        outline: '0px',
+        padding: '8px',
+        backgroundColor: 'transparent',
     },
 };
 

@@ -4,12 +4,22 @@
  * @description Theme
  */
 
+import { BLACK, NAVY } from "@bwnl/shiny-inline";
 import * as React from "react";
 
 export type LandingTheme = {
 
+    readonly color: {
+        readonly majorColor: {
+            readonly regular: string;
+            readonly emphasize: string;
+        };
+    },
     readonly title: {
         readonly presentationTitle: React.CSSProperties;
+    };
+    readonly action: {
+        readonly majorAction: React.CSSProperties;
     };
 };
 
@@ -21,9 +31,21 @@ const getDefaultTheme = (): LandingTheme => {
 
     return {
 
+        color: {
+            majorColor: {
+                regular: NAVY,
+                emphasize: BLACK,
+            },
+        },
         title: {
             presentationTitle: {
                 fontSize: '24px',
+            },
+        },
+        action: {
+            majorAction: {
+                fontSize: '24px',
+                fontWeight: 'bold',
             },
         },
     };
