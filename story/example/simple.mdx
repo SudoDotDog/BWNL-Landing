@@ -3,7 +3,7 @@ menu: Example
 name: Simple
 ---
 
-import { Block, DoubleColumn, Header, LandingThemeProvider, MajorTitle, SeparatedColumn, Centered, NavigateButton, DropdownNavigateButton } from "../../src/index";
+import { Block, DoubleColumn, Header, LandingThemeProvider, MajorTitle, SeparatedColumn, Centered, NavigateButton, DropdownNavigateButton, MinorTitle, SingleColumn } from "../../src/index";
 
 # Landing Simple Example
 
@@ -64,6 +64,19 @@ import { Block, DoubleColumn, Header, LandingThemeProvider, MajorTitle, Separate
                         Some Form for Demo
                     </div>}
                 />
+            </Centered>
+        </Block>
+        <Block>
+            <Centered>
+                <SingleColumn
+                    verticalPadding="medium"
+                >
+                    <MinorTitle
+                        center
+                        title="Here's What We Got!"
+                        subtitle="This product is extremely good, that no good enough landing page worth it."
+                    />
+                </SingleColumn>
             </Centered>
         </Block>
     </LandingThemeProvider>
