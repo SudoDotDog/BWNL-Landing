@@ -3,7 +3,7 @@ menu: Section
 name: Centered
 ---
 
-import { Centered } from "../../src/index";
+import { CenteredBlock } from "../../src/index";
 import { Playground } from "docz";
 
 # Footer
@@ -11,7 +11,7 @@ import { Playground } from "docz";
 ## Simple
 
 <Playground>
-    <Centered
+    <CenteredBlock
         coverStyle={{
             backgroundColor: 'red',
         }}
@@ -20,13 +20,13 @@ import { Playground } from "docz";
         }}
     >
         Hello World
-    </Centered>
+    </CenteredBlock>
 </Playground>
 
 ## Full Width
 
 <Playground>
-    <Centered
+    <CenteredBlock
         coverStyle={{
             backgroundColor: 'red',
         }}
@@ -35,5 +35,5 @@ import { Playground } from "docz";
         }}
     >
         {'Placeholder, '.repeat(100)}
-    </Centered>
+    </CenteredBlock>
 </Playground>

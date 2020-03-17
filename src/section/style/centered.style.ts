@@ -1,13 +1,13 @@
 /**
  * @author WMXPY
  * @namespace Landing_Section
- * @description Centered
+ * @description Centered Block
  */
 
 import { StyleManager, Styles } from "@sudoo/jss";
 import { landingStyleCollection } from "../../style";
 
-export const CenteredStyleBase: Styles = {
+export const CenteredBlockStyleBase: Styles = {
 
     cover: {
         display: 'flex',
@@ -16,4 +16,4 @@ export const CenteredStyleBase: Styles = {
     },
 };
 
-export const CenteredStyle: StyleManager = landingStyleCollection.hydrate('Section-Centered', CenteredStyleBase);
+export const CenteredBlockStyle: StyleManager = landingStyleCollection.hydrate('Section-Centered-Block', CenteredBlockStyleBase);

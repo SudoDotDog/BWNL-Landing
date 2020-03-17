@@ -1,16 +1,16 @@
 /**
  * @author WMXPY
  * @namespace Landing_Section
- * @description Centered
+ * @description CenteredBlock
  */
 
 import { Classes } from "@sudoo/jss";
 import * as React from "react";
 import { LandingTheme, ThemeProps, withTheme } from "../../theme";
-import { CenteredStyle } from "../style/centered.style";
+import { CenteredBlockStyle } from "../style/centered.style";
 import { Block } from "./block";
 
-export type CenteredProps = {
+export type CenteredBlockProps = {
 
     readonly backgroundImage?: string;
 
@@ -18,11 +18,11 @@ export type CenteredProps = {
     readonly style?: React.CSSProperties;
 };
 
-type CenteredWithThemeProps = CenteredProps & ThemeProps;
+type CenteredBlockWithThemeProps = CenteredBlockProps & ThemeProps;
 
-class CenteredBase extends React.PureComponent<CenteredWithThemeProps> {
+class CenteredBlockBase extends React.PureComponent<CenteredBlockWithThemeProps> {
 
-    private readonly _centeredStyle: Classes = CenteredStyle.use();
+    private readonly _centeredBlockStyle: Classes = CenteredBlockStyle.use();
 
     public render() {
 
@@ -37,7 +37,7 @@ class CenteredBase extends React.PureComponent<CenteredWithThemeProps> {
 
         return (<div
             style={this.props.coverStyle}
-            className={this._centeredStyle.cover}
+            className={this._centeredBlockStyle.cover}
         >
             <Block
                 style={sectionStyle}
@@ -61,4 +61,4 @@ class CenteredBase extends React.PureComponent<CenteredWithThemeProps> {
     }
 }
 
-export const Centered: React.ComponentType<CenteredProps> = withTheme(CenteredBase);
+export const CenteredBlock: React.ComponentType<CenteredBlockProps> = withTheme(CenteredBlockBase);
