@@ -120,8 +120,8 @@ class NavigateLinkBase extends React.Component<NavigateLinkWithThemeProps, Navig
         const theme: LandingTheme = this.props.theme;
         const emphasize: boolean = this._isEmphasized();
 
-        const emphasizeColor: string = this.props.emphasizeColor ?? theme.color.majorColor.emphasize;
-        const regularColor: string = this.props.regularColor ?? theme.color.majorColor.regular;
+        const emphasizeColor: string = this.props.emphasizeColor ?? theme.color.majorColor.navigate;
+        const regularColor: string = this.props.regularColor ?? theme.color.majorColor.link;
 
         return {
             color: emphasize

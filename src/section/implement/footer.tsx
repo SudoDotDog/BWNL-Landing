@@ -9,6 +9,7 @@ import * as React from "react";
 import { LandingTheme, ThemeProps, withTheme } from "../../theme";
 import { FooterCategory, FooterLink } from "../declare/footer";
 import { FooterStyle } from "../style/footer.style";
+import { NavigateLink } from "../../components/implement/navigate-link";
 
 export type FooterProps = {
 
@@ -73,9 +74,10 @@ class FooterBase extends React.PureComponent<FooterWithThemeProps> {
     private _renderLink(link: FooterLink, index: number) {
 
         return (<div key={index}>
-            <a href={link.link}>
-                {link.name}
-            </a>
+            <NavigateLink
+                title={link.name}
+                href={link.link}
+            />
         </div>);
     }
 }

@@ -15,7 +15,8 @@ export const FooterStyleBase: Styles = {
     },
     left: {
         flex: 1,
-        margin: '12px',
+        marginTop: '12px',
+        marginBottom: '12px',
         minWidth: '256px',
     },
     right: {
@@ -25,10 +26,16 @@ export const FooterStyleBase: Styles = {
     },
     categoryCover: {
         flex: 1,
-        margin: '24px',
+        marginLeft: '12px',
+        marginRight: '12px',
     },
     categoryTitle: {
         fontWeight: 'bold',
+        marginBottom: '8px',
+        marginTop: '8px',
+    },
+    link: {
+        textDecoration: 'none',
     },
 };
 

@@ -31,6 +31,8 @@ export type LandingTheme = {
         readonly majorColor: {
             readonly border: string;
             readonly regular: string;
+            readonly link: string;
+            readonly navigate: string;
             readonly background: string;
             readonly emphasize: string;
         };
@@ -92,6 +94,8 @@ const getDefaultTheme = (): LandingTheme => {
             majorColor: {
                 border: GRAY,
                 regular: NAVY,
+                link: BLUE,
+                navigate: 'lightblue',
                 background: WHITE,
                 emphasize: BLUE,
             },

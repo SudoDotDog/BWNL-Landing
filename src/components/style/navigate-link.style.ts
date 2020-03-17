@@ -16,7 +16,7 @@ export const NavigateLinkStyleBase: Styles = {
         cursor: 'pointer',
     },
     actionField: {
-        transition: '0.3s all',
+        transition: '0.1s all',
         marginLeft: '0px',
     },
     actionMarginLeft: {
