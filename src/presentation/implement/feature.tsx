@@ -6,7 +6,7 @@
 
 import { Classes } from "@sudoo/jss";
 import * as React from "react";
-import { RemoverStyle } from "../../common/remover.style";
+import { RemoverStyle } from "../../common/style/remover.style";
 import { LandingTheme, ThemeProps, withTheme } from "../../theme";
 import { FeatureStyle } from "../style/feature.style";
 

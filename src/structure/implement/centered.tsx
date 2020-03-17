@@ -6,13 +6,14 @@
 
 import { Classes } from "@sudoo/jss";
 import * as React from "react";
-import { FillerStyle } from "../../common/filler.style";
+import { FillerStyle } from "../../common/style/filler.style";
 import { LandingTheme, ThemeProps, withTheme } from "../../theme";
 import { CenteredStyle } from "../style/centered.style";
 
 export type CenteredProps = {
 
-    readonly maxWidth: string;
+    readonly maxWidth?: string;
+    readonly minWidth?: string;
 
     readonly coverStyle?: React.CSSProperties;
     readonly style?: React.CSSProperties;
@@ -35,7 +36,8 @@ class CenteredBase extends React.PureComponent<CenteredWithThemeProps> {
         >
             <div
                 style={{
-                    maxWidth: this.props.maxWidth,
+                    maxWidth: this.props.maxWidth ?? theme.block.centered.maxWidth,
+                    minWidth: this.props.minWidth ?? theme.block.centered.minWidth,
                     ...this.props.style,
                 }}
                 className={this._fillerStyle.width}

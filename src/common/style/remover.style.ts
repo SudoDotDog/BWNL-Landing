@@ -5,7 +5,7 @@
  */
 
 import { StyleManager, Styles } from "@sudoo/jss";
-import { landingStyleCollection } from "../style";
+import { landingStyleCollection } from "../../style";
 
 export const RemoverStyleBase: Styles = {
 

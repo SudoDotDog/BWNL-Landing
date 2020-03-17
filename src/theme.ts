@@ -4,7 +4,7 @@
  * @description Theme
  */
 
-import { LIME, NAVY } from "@bwnl/shiny-inline";
+import { BLUE, NAVY } from "@bwnl/shiny-inline";
 import * as React from "react";
 
 export type LandingTheme = {
@@ -69,7 +69,7 @@ const getDefaultTheme = (): LandingTheme => {
         color: {
             majorColor: {
                 regular: NAVY,
-                emphasize: LIME,
+                emphasize: BLUE,
             },
         },
         title: {
@@ -98,7 +98,8 @@ const getDefaultTheme = (): LandingTheme => {
         },
         action: {
             majorAction: {
-                fontSize: '24px',
+                fontSize: '18px',
+                lineHeight: '20px',
                 fontWeight: 'bold',
             },
         },

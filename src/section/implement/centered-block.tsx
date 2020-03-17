@@ -12,6 +12,9 @@ import { Block } from "./block";
 
 export type CenteredBlockProps = {
 
+    readonly maxWidth?: string;
+    readonly minWidth?: string;
+
     readonly backgroundImage?: string;
 
     readonly coverStyle?: React.CSSProperties;
@@ -29,8 +32,8 @@ class CenteredBlockBase extends React.PureComponent<CenteredBlockWithThemeProps>
         const theme: LandingTheme = this.props.theme;
 
         const sectionStyle: React.CSSProperties = {
-            maxWidth: theme.block.centered.maxWidth,
-            minWidth: theme.block.centered.minWidth,
+            maxWidth: this.props.maxWidth ?? theme.block.centered.maxWidth,
+            minWidth: this.props.minWidth ?? theme.block.centered.minWidth,
             ...this._getBackgroundStyle(),
             ...this.props.style,
         };

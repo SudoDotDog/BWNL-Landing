@@ -13,7 +13,8 @@ export const NavigateButtonStyleBase: Styles = {
         fontWeight: 'bold',
         border: '0px',
         outline: '0px',
-        padding: '8px',
+        paddingLeft: '5px',
+        paddingRight: '5px',
         backgroundColor: 'transparent',
 
         transition: '0.3s all',

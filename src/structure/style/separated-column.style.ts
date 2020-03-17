@@ -10,25 +10,10 @@ import { landingStyleCollection } from "../../style";
 export const SeparatedColumnStyleBase: Styles = {
 
     cover: {
-        width: '100%',
         display: 'flex',
         flexWrap: 'wrap',
         alignItems: 'center',
-        justifyContent: 'center',
-    },
-    left: {
-        margin: '8px',
-        flex: 1,
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-    right: {
-        margin: '8px',
-        flex: 1,
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
+        justifyContent: 'space-between',
     },
 };
 

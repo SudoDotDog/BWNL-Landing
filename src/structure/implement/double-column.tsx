@@ -6,6 +6,7 @@
 
 import { Classes } from "@sudoo/jss";
 import * as React from "react";
+import { getVerticalPaddingStyle, SizeType } from "../../common/style";
 import { LandingTheme, ThemeProps, withTheme } from "../../theme";
 import { DoubleColumnStyle } from "../style/double-column.style";
 
@@ -14,6 +15,7 @@ export type DoubleColumnProps = {
     readonly left: React.ReactNode;
     readonly right: React.ReactNode;
 
+    readonly verticalPadding?: SizeType;
     readonly style?: React.CSSProperties;
 };
 
@@ -29,7 +31,7 @@ class DoubleColumnBase extends React.PureComponent<DoubleColumnWithThemeProps> {
 
         return (<div
             style={{
-                ...theme.block.verticalPadding.large,
+                ...getVerticalPaddingStyle(theme, this.props.verticalPadding),
                 ...this.props.style,
             }}
             className={this._doubleColumnStyle.cover}

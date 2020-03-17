@@ -21,7 +21,6 @@ class HeaderBase extends React.PureComponent<HeaderWithThemeProps> {
         const theme: LandingTheme = this.props.theme;
 
         return (<header style={{
-            ...theme.block.verticalPadding.small,
             ...this.props.style,
         }}>
             <div>{this.props.children}</div>
