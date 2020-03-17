@@ -1,6 +1,6 @@
 /**
  * @author WMXPY
- * @namespace Landing_Section
+ * @namespace Landing_Structure
  * @description Auto Fit Grid
  */
 

@@ -1,0 +1,56 @@
+---
+menu: Structure
+name: Pennant Column
+---
+
+import { PennantColumn } from "../../src/index";
+import { Playground } from "docz";
+
+# Pennant Column
+
+## Raise Left
+
+<Playground>
+    <PennantColumn
+        style={{
+            backgroundColor: 'lightblue',
+        }}
+        left={<div style={{
+            width: '300px', 
+            height: '400px', 
+            backgroundColor: 'blue',
+            color: 'white',
+        }}>Left</div>}
+        raiseLeft="40px"
+        right={<div style={{
+            width: '300px', 
+            height: '400px', 
+            backgroundColor: 'blue',
+            color: 'white',
+        }}>Right</div>}
+    />
+</Playground>
+
+## Raise Right
+
+<Playground>
+    <PennantColumn
+        style={{
+            backgroundColor: 'lightblue',
+        }}
+        left={<div style={{
+            width: '300px', 
+            height: '400px', 
+            backgroundColor: 'blue',
+            color: 'white',
+        }}>Left</div>}
+        right={<div style={{
+            width: '300px', 
+            height: '400px', 
+            backgroundColor: 'blue',
+            color: 'white',
+        }}>Right</div>}
+        raiseRight="40px"
+    />
+</Playground>
+
