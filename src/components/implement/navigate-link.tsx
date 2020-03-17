@@ -68,7 +68,7 @@ class NavigateLinkBase extends React.Component<NavigateLinkWithThemeProps, Navig
             onMouseLeave={this._handleOnLeave}
         >
             {this._renderLeading()}
-            <span>{this.props.leading}</span>
+            <span>{this.props.title}</span>
             {this._renderAfter()}
         </a>);
     }

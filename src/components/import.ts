@@ -6,4 +6,5 @@
 
 export * from "./implement/dropdown-navigate-button";
 export * from "./implement/navigate-button";
+export * from "./implement/navigate-link";
 

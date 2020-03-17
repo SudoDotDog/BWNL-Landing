@@ -1,0 +1,32 @@
+---
+menu: Components
+name: Navigate Link
+---
+
+import { NavigateLink } from "../../src/index";
+import { Playground } from "docz";
+
+# Navigate Link
+
+## Simple
+
+<Playground>
+    <NavigateLink
+        title="Learn More"
+        after="→"
+        href="https://example.com"
+        onClick={() => console.log('Yeah!')}
+    />
+</Playground>
+
+## With Leading
+
+<Playground>
+    <NavigateLink
+        leading="😊"
+        title="Learn More"
+        after="👉"
+        href="https://example.com"
+        onClick={() => console.log('Yeah!')}
+    />
+</Playground>
