@@ -10,6 +10,11 @@ import * as React from "react";
 export type LandingTheme = {
 
     readonly block: {
+        readonly padding: {
+            readonly large: React.CSSProperties;
+            readonly medium: React.CSSProperties;
+            readonly small: React.CSSProperties;
+        },
         readonly centered: {
             readonly maxWidth: string;
             readonly minWidth: string;
@@ -42,6 +47,26 @@ const getDefaultTheme = (): LandingTheme => {
     return {
 
         block: {
+            padding: {
+                large: {
+                    paddingTop: '96px',
+                    paddingBottom: '96px',
+                    paddingLeft: '48px',
+                    paddingRight: '48px',
+                },
+                medium: {
+                    paddingTop: '48px',
+                    paddingBottom: '48px',
+                    paddingLeft: '24px',
+                    paddingRight: '24px',
+                },
+                small: {
+                    paddingTop: '12px',
+                    paddingBottom: '12px',
+                    paddingLeft: '18px',
+                    paddingRight: '18px',
+                },
+            },
             centered: {
                 maxWidth: '80%',
                 minWidth: '256px',

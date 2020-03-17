@@ -24,8 +24,8 @@ class BlockBase extends React.PureComponent<BlockWithThemeProps> {
         const theme: LandingTheme = this.props.theme;
 
         const sectionStyle: React.CSSProperties = {
-            ...this.props.style,
             ...this._getBackgroundStyle(),
+            ...this.props.style,
         };
 
         return (<section

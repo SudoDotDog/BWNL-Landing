@@ -12,6 +12,8 @@ import { Block } from "./block";
 
 export type CenteredProps = {
 
+    readonly backgroundImage?: string;
+
     readonly coverStyle?: React.CSSProperties;
     readonly style?: React.CSSProperties;
 };
@@ -26,20 +28,36 @@ class CenteredBase extends React.PureComponent<CenteredWithThemeProps> {
 
         const theme: LandingTheme = this.props.theme;
 
+        const sectionStyle: React.CSSProperties = {
+            maxWidth: theme.block.centered.maxWidth,
+            minWidth: theme.block.centered.minWidth,
+            ...this._getBackgroundStyle(),
+            ...this.props.style,
+        };
+
         return (<div
             style={this.props.coverStyle}
             className={this._centeredStyle.cover}
         >
             <Block
-                style={{
-                    maxWidth: theme.block.centered.maxWidth,
-                    minWidth: theme.block.centered.minWidth,
-                    ...this.props.style,
-                }}
+                style={sectionStyle}
             >
                 {this.props.children}
             </Block>
         </div>);
+    }
+
+    private _getBackgroundStyle(): React.CSSProperties {
+
+        if (this.props.backgroundImage) {
+            return {
+                backgroundImage: `url(${this.props.backgroundImage})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                backgroundRepeat: 'no-repeat',
+            };
+        }
+        return {};
     }
 }
 
