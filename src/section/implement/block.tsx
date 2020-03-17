@@ -23,7 +23,7 @@ class BlockBase extends React.PureComponent<BlockWithThemeProps> {
         return (<section style={{
             ...this.props.style,
         }}>
-            <div>{this.props.children}</div>
+            {this.props.children}
         </section>);
     }
 }
