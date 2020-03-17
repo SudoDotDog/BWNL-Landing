@@ -11,7 +11,35 @@ import { Playground } from "docz";
 ## Simple
 
 <Playground>
-    <Footer>
-        Hello
-    </Footer>
+    <Footer
+        left={<div>
+            Good Company
+            <div>123-456-7890</div>
+        </div>}
+        categories={[
+            {
+                category: 'Product',
+                links: [{
+                    link: 'https://example.com',
+                    name: 'First'
+                },{
+                    link: 'https://example.com',
+                    name: 'Second'
+                },{
+                    link: 'https://example.com',
+                    name: 'Third'
+                }]
+            },
+            {
+                category: 'Service',
+                links: [{
+                    link: 'https://example.com',
+                    name: 'First'
+                },{
+                    link: 'https://example.com',
+                    name: 'Second'
+                }]
+            },
+        ]}
+    />
 </Playground>
