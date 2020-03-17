@@ -11,6 +11,7 @@ import { LandingTheme, ThemeProps, withTheme } from "../../theme";
 export type SingleColumnProps = {
 
     readonly verticalPadding?: SizeType;
+
     readonly style?: React.CSSProperties;
 };
 

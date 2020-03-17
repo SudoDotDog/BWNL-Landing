@@ -10,6 +10,7 @@ import { LandingTheme, ThemeProps, withTheme } from "../../theme";
 export type BlockProps = {
 
     readonly backgroundImage?: string;
+    readonly backgroundColor?: string;
 
     readonly style?: React.CSSProperties;
     readonly className?: string;
@@ -44,6 +45,12 @@ class BlockBase extends React.PureComponent<BlockWithThemeProps> {
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 backgroundRepeat: 'no-repeat',
+            };
+        }
+
+        if (this.props.backgroundColor) {
+            return {
+                backgroundColor: this.props.backgroundColor,
             };
         }
         return {};

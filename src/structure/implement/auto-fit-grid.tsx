@@ -34,8 +34,6 @@ class AutoFitGridBase extends React.PureComponent<AutoFitGridWithThemeProps> {
             ...this.props.style,
         };
 
-        console.log(containerStyle);
-
         return (<div
             style={containerStyle}
         >
