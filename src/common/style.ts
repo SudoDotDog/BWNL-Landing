@@ -5,7 +5,7 @@
  */
 
 import * as React from "react";
-import { LandingTheme } from "../theme";
+import { LandingTheme } from "../theme/declare";
 
 export type SizeType = 'small' | 'medium' | 'large';
 

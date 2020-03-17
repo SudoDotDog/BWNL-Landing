@@ -13,5 +13,7 @@ export * from "./presentation/import";
 export * from "./section/import";
 export * from "./structure/import";
 export * from "./style";
+export * from "./theme/declare";
+export * from "./theme/default";
 export * from "./theme/theme";
 
