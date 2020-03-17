@@ -4,7 +4,7 @@
  * @description Theme
  */
 
-import { BLUE, NAVY } from "@bwnl/shiny-inline";
+import { BLUE, GRAY, NAVY, WHITE } from "@bwnl/shiny-inline";
 import * as React from "react";
 
 export type LandingTheme = {
@@ -14,18 +14,20 @@ export type LandingTheme = {
             readonly large: React.CSSProperties;
             readonly medium: React.CSSProperties;
             readonly small: React.CSSProperties;
-        },
+        };
         readonly centered: {
             readonly maxWidth: string;
             readonly minWidth: string;
         };
-    },
+    };
     readonly color: {
         readonly majorColor: {
+            readonly border: string;
             readonly regular: string;
+            readonly background: string;
             readonly emphasize: string;
         };
-    },
+    };
     readonly title: {
         readonly majorTitle: React.CSSProperties;
         readonly minorTitle: React.CSSProperties;
@@ -68,7 +70,9 @@ const getDefaultTheme = (): LandingTheme => {
         },
         color: {
             majorColor: {
+                border: GRAY,
                 regular: NAVY,
+                background: WHITE,
                 emphasize: BLUE,
             },
         },
