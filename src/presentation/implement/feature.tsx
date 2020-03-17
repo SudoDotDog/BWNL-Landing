@@ -15,6 +15,7 @@ export type FeatureProps = {
     readonly title: React.ReactNode;
     readonly description: string;
 
+    readonly topping?: React.ReactNode;
     readonly leading?: React.ReactNode;
     readonly action?: React.ReactNode;
 
@@ -30,12 +31,40 @@ class FeatureBase extends React.PureComponent<FeatureWithThemeProps> {
 
     public render() {
 
-        const theme: LandingTheme = this.props.theme;
-
         return (<div style={{
             ...this.props.style,
         }}>
-            {this._renderLeading()}
+            {this._renderWithLeading()}
+        </div>);
+    }
+
+    private _renderWithLeading() {
+
+        if (!this.props.leading) {
+            return this._renderContent();
+        }
+
+        return (<div
+            className={this._featureStyle.leadingContainer}
+        >
+            <div
+                className={this._featureStyle.leading}
+            >
+                {this.props.leading}
+            </div>
+            <div
+                className={this._featureStyle.leadingContent}
+            >
+                {this._renderContent()}
+            </div>
+        </div>)
+    }
+
+    private _renderContent() {
+
+        const theme: LandingTheme = this.props.theme;
+        return (<React.Fragment>
+            {this._renderTopping()}
             <div className={this._featureStyle.title}>
                 <h4
                     className={this._removerStyle.paddingAndMargin}
@@ -48,17 +77,17 @@ class FeatureBase extends React.PureComponent<FeatureWithThemeProps> {
                 {this.props.description}
             </div>
             {this._renderAction()}
-        </div>);
+        </React.Fragment>);
     }
 
-    private _renderLeading() {
+    private _renderTopping() {
 
-        if (!this.props.leading) {
+        if (!this.props.topping) {
             return null;
         }
 
-        return (<div className={this._featureStyle.leading}>
-            {this.props.leading}
+        return (<div className={this._featureStyle.topping}>
+            {this.props.topping}
         </div>);
     }
 

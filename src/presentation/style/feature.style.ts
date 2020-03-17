@@ -9,8 +9,20 @@ import { landingStyleCollection } from "../../style";
 
 export const FeatureStyleBase: Styles = {
 
-    leading: {
+    topping: {
         marginBottom: '6px',
+    },
+    leadingContainer: {
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    leadingContent: {
+        flex: 1,
+    },
+    leading: {
+        width: 'auto',
+        marginRight: '12px',
     },
     title: {
 
