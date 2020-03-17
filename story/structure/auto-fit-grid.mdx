@@ -1,0 +1,24 @@
+---
+menu: Structure
+name: Auto Fit Grid
+---
+
+import { AutoFitGrid } from "../../src/index";
+import { Playground } from "docz";
+
+# Auto Fit Grid
+
+## Simple
+
+<Playground>
+    <AutoFitGrid
+        gridMinWidth="256px"
+        columnGap="5px"
+        rowGap="5px"
+    >
+        <div style={{ width: '100px', height: '100px', backgroundColor: 'lightblue' }}>First</div>
+        <div style={{ width: '100px', height: '100px', backgroundColor: 'lightblue' }}>Second</div>
+        <div style={{ width: '100px', height: '100px', backgroundColor: 'lightblue' }}>Third</div>
+        <div style={{ width: '100px', height: '100px', backgroundColor: 'lightblue' }}>Fourth</div>
+    </AutoFitGrid>
+</Playground>
