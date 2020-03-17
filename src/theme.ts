@@ -9,6 +9,13 @@ import * as React from "react";
 
 export type LandingTheme = {
 
+    readonly presentation: {
+        readonly containerPadding: {
+            readonly large: React.CSSProperties;
+            readonly medium: React.CSSProperties;
+            readonly small: React.CSSProperties;
+        };
+    };
     readonly block: {
         readonly verticalPadding: {
             readonly large: React.CSSProperties;
@@ -48,6 +55,19 @@ const getDefaultTheme = (): LandingTheme => {
 
     return {
 
+        presentation: {
+            containerPadding: {
+                large: {
+                    padding: '48px',
+                },
+                medium: {
+                    padding: '24px',
+                },
+                small: {
+                    padding: '12px',
+                },
+            },
+        },
         block: {
             verticalPadding: {
                 large: {

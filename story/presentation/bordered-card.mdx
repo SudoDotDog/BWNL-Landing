@@ -11,7 +11,34 @@ import { Playground } from "docz";
 ## Simple
 
 <Playground>
-    <BorderedCard>
+    <BorderedCard
+        size="medium"
+    >
         Good Stuff!
     </BorderedCard>
+</Playground>
+
+## Example Group
+
+<Playground>
+    <div style={{
+        display: 'flex',
+        justifyContent: 'space-between',
+    }}>
+        <BorderedCard
+            size="medium"
+        >
+            First
+        </BorderedCard>
+        <BorderedCard
+            size="medium"
+        >
+            Second
+        </BorderedCard>
+        <BorderedCard
+            size="medium"
+        >
+            Third
+        </BorderedCard>
+    </div>
 </Playground>

@@ -6,10 +6,13 @@
 
 import { Classes } from "@sudoo/jss";
 import * as React from "react";
+import { getPresentationContainerPaddingStyle, SizeType } from "../../common/style";
 import { LandingTheme, ThemeProps, withTheme } from "../../theme";
 import { BorderedCardStyle } from "../style/bordered-card.style";
 
 export type BorderedCardProps = {
+
+    readonly size?: SizeType;
 
     readonly style?: React.CSSProperties;
 };
@@ -30,6 +33,7 @@ class BorderedCardBase extends React.PureComponent<BorderedCardWithThemeProps> {
                 borderColor: theme.color.majorColor.border,
                 backgroundColor: theme.color.majorColor.background,
                 boxShadow: `1px 1px 2px 0 ${theme.color.majorColor.border}`,
+                ...getPresentationContainerPaddingStyle(theme, this.props.size),
                 ...this.props.style,
             }}
         >

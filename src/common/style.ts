@@ -22,3 +22,17 @@ export const getVerticalPaddingStyle = (theme: LandingTheme, size?: SizeType): R
     }
     return {};
 };
+
+export const getPresentationContainerPaddingStyle = (theme: LandingTheme, size?: SizeType): React.CSSProperties => {
+
+    if (!size) {
+        return {};
+    }
+
+    switch (size) {
+        case 'large': return theme.presentation.containerPadding.large;
+        case 'medium': return theme.presentation.containerPadding.medium;
+        case 'small': return theme.presentation.containerPadding.small;
+    }
+    return {};
+};
