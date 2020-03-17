@@ -56,19 +56,24 @@ const getDefaultTheme = (): LandingTheme => {
         title: {
             majorTitle: {
                 fontSize: '36px',
+                lineHeight: '38px',
             },
             minorTitle: {
                 fontSize: '28px',
+                lineHeight: '26px',
             },
             subtitle: {
                 fontSize: '18px',
+                lineHeight: '20px',
                 fontWeight: 'normal',
             },
             presentationTitle: {
                 fontSize: '24px',
+                lineHeight: '26px',
             },
             categoryTitle: {
                 fontSize: '18px',
+                lineHeight: '20px',
                 fontWeight: 'bold',
             },
         },

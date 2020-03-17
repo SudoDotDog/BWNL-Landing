@@ -23,12 +23,14 @@ class BlockBase extends React.PureComponent<BlockWithThemeProps> {
 
         const theme: LandingTheme = this.props.theme;
 
+        const sectionStyle: React.CSSProperties = {
+            ...this.props.style,
+            ...this._getBackgroundStyle(),
+        };
+
         return (<section
             className={this.props.className}
-            style={{
-                ...this.props.style,
-                ...this._getBackgroundStyle(),
-            }}
+            style={sectionStyle}
         >
             {this.props.children}
         </section>);
@@ -38,7 +40,10 @@ class BlockBase extends React.PureComponent<BlockWithThemeProps> {
 
         if (this.props.backgroundImage) {
             return {
-                backgroundImage: this.props.backgroundImage,
+                backgroundImage: `url(${this.props.backgroundImage})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                backgroundRepeat: 'no-repeat',
             };
         }
         return {};
