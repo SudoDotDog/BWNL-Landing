@@ -4,7 +4,6 @@
  * @description Import
  */
 
-export * from "./implement/block";
-export * from "./implement/header";
-export * from "./implement/pre-header";
+export * from "./implement/double-column";
+export * from "./implement/separated-column";
 

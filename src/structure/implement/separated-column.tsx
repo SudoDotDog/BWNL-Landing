@@ -1,13 +1,13 @@
 /**
  * @author WMXPY
  * @namespace Landing_Structure
- * @description Pre Header
+ * @description Separated Column
  */
 
 import * as React from "react";
 import { LandingTheme, ThemeProps, withTheme } from "../../theme";
 
-export type PreHeaderProps = {
+export type SeparatedColumnProps = {
 
     readonly left: React.ReactNode;
     readonly right: React.ReactNode;
@@ -15,9 +15,9 @@ export type PreHeaderProps = {
     readonly style?: React.CSSProperties;
 };
 
-type PreHeaderWithThemeProps = PreHeaderProps & ThemeProps;
+type SeparatedColumnWithThemeProps = SeparatedColumnProps & ThemeProps;
 
-class PreHeaderBase extends React.PureComponent<PreHeaderWithThemeProps> {
+class SeparatedColumnBase extends React.PureComponent<SeparatedColumnWithThemeProps> {
 
     public render() {
 
@@ -35,4 +35,4 @@ class PreHeaderBase extends React.PureComponent<PreHeaderWithThemeProps> {
     }
 }
 
-export const PreHeader: React.ComponentType<PreHeaderProps> = withTheme(PreHeaderBase);
+export const SeparatedColumn: React.ComponentType<SeparatedColumnProps> = withTheme(SeparatedColumnBase);

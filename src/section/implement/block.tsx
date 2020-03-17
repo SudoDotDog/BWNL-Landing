@@ -1,31 +1,31 @@
 /**
  * @author WMXPY
- * @namespace Landing_Structure
- * @description Header
+ * @namespace Landing_Section
+ * @description Block
  */
 
 import * as React from "react";
 import { LandingTheme, ThemeProps, withTheme } from "../../theme";
 
-export type HeaderProps = {
+export type BlockProps = {
 
     readonly style?: React.CSSProperties;
 };
 
-type HeaderWithThemeProps = HeaderProps & ThemeProps;
+type BlockWithThemeProps = BlockProps & ThemeProps;
 
-class HeaderBase extends React.PureComponent<HeaderWithThemeProps> {
+class BlockBase extends React.PureComponent<BlockWithThemeProps> {
 
     public render() {
 
         const theme: LandingTheme = this.props.theme;
 
-        return (<div style={{
+        return (<section style={{
             ...this.props.style,
         }}>
             <div>{this.props.children}</div>
-        </div>);
+        </section>);
     }
 }
 
-export const Header: React.ComponentType<HeaderProps> = withTheme(HeaderBase);
+export const Block: React.ComponentType<BlockProps> = withTheme(BlockBase);

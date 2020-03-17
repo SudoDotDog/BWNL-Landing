@@ -1,13 +1,13 @@
 /**
  * @author WMXPY
- * @namespace Landing_Section
+ * @namespace Landing_Structure
  * @description Double Column
  */
 
 import { StyleManager, Styles } from "@sudoo/jss";
 import { landingStyleCollection } from "../../style";
 
-export const DoubleColumnSectionStyleBase: Styles = {
+export const DoubleColumnStyleBase: Styles = {
 
     cover: {
         display: 'flex',
@@ -31,4 +31,4 @@ export const DoubleColumnSectionStyleBase: Styles = {
     },
 };
 
-export const DoubleColumnSectionStyle: StyleManager = landingStyleCollection.hydrate('Section-Double-Column', DoubleColumnSectionStyleBase);
+export const DoubleColumnStyle: StyleManager = landingStyleCollection.hydrate('Structure-Double-Column', DoubleColumnStyleBase);

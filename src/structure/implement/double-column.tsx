@@ -7,7 +7,7 @@
 import { Classes } from "@sudoo/jss";
 import * as React from "react";
 import { LandingTheme, ThemeProps, withTheme } from "../../theme";
-import { DoubleColumnSectionStyle } from "../style/double-column.style";
+import { DoubleColumnStyle } from "../style/double-column.style";
 
 export type DoubleColumnSectionProps = {
 
@@ -21,7 +21,7 @@ type DoubleColumnSectionWithThemeProps = DoubleColumnSectionProps & ThemeProps;
 
 class DoubleColumnSectionBase extends React.PureComponent<DoubleColumnSectionWithThemeProps> {
 
-    private readonly _doubleColumnStyle: Classes = DoubleColumnSectionStyle.use();
+    private readonly _doubleColumnStyle: Classes = DoubleColumnStyle.use();
 
     public render() {
 
