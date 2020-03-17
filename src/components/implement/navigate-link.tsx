@@ -6,7 +6,8 @@
 
 import { assertIfTrue, Classes, mergeClasses } from "@sudoo/jss";
 import * as React from "react";
-import { LandingTheme, ThemeProps, withTheme } from "../../theme";
+import { LandingTheme } from "../../theme/declare";
+import { ThemeProps, withTheme } from "../../theme/theme";
 import { NavigateLinkStyle } from "../style/navigate-link.style";
 
 export type NavigateLinkProps = {

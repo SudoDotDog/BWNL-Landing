@@ -7,7 +7,8 @@
 import { Classes } from "@sudoo/jss";
 import * as React from "react";
 import { FillerStyle } from "../../common/style/filler.style";
-import { LandingTheme, ThemeProps, withTheme } from "../../theme";
+import { LandingTheme } from "../../theme/declare";
+import { ThemeProps, withTheme } from "../../theme/theme";
 import { CenteredStyle } from "../style/centered.style";
 
 export type CenteredProps = {

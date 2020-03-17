@@ -7,7 +7,8 @@
 import { Classes } from "@sudoo/jss";
 import * as React from "react";
 import { getPresentationContainerPaddingStyle, SizeType } from "../../common/style";
-import { LandingTheme, ThemeProps, withTheme } from "../../theme";
+import { LandingTheme } from "../../theme/declare";
+import { ThemeProps, withTheme } from "../../theme/theme";
 import { BorderedCardStyle } from "../style/bordered-card.style";
 
 export type BorderedCardProps = {

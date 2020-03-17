@@ -7,7 +7,8 @@
 import { Classes } from "@sudoo/jss";
 import * as React from "react";
 import { RemoverStyle } from "../../common/style/remover.style";
-import { LandingTheme, ThemeProps, withTheme } from "../../theme";
+import { LandingTheme } from "../../theme/declare";
+import { ThemeProps, withTheme } from "../../theme/theme";
 import { FeatureStyle } from "../style/feature.style";
 
 export type FeatureProps = {

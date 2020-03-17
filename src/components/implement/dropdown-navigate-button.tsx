@@ -6,7 +6,8 @@
 
 import { Classes } from "@sudoo/jss";
 import * as React from "react";
-import { LandingTheme, ThemeProps, withTheme } from "../../theme";
+import { LandingTheme } from "../../theme/declare";
+import { ThemeProps, withTheme } from "../../theme/theme";
 import { DropdownNavigateButtonStyle } from "../style/dropdown-navigate-button.style";
 import { NavigateButton, NavigateButtonProps } from "./navigate-button";
 

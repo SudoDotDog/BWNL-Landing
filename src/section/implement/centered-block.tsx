@@ -6,7 +6,8 @@
 
 import { Classes } from "@sudoo/jss";
 import * as React from "react";
-import { LandingTheme, ThemeProps, withTheme } from "../../theme";
+import { LandingTheme } from "../../theme/declare";
+import { ThemeProps, withTheme } from "../../theme/theme";
 import { CenteredBlockStyle } from "../style/centered-block.style";
 import { Block } from "./block";
 

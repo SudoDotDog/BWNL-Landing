@@ -6,7 +6,8 @@
 
 import { Classes } from "@sudoo/jss";
 import * as React from "react";
-import { LandingTheme, ThemeProps, withTheme } from "../../theme";
+import { LandingTheme } from "../../theme/declare";
+import { ThemeProps, withTheme } from "../../theme/theme";
 import { FooterCategory, FooterLink } from "../declare/footer";
 import { FooterStyle } from "../style/footer.style";
 import { NavigateLink } from "../../components/implement/navigate-link";

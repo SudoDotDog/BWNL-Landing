@@ -6,7 +6,8 @@
 
 import * as React from "react";
 import { getVerticalPaddingStyle, SizeType } from "../../common/style";
-import { LandingTheme, ThemeProps, withTheme } from "../../theme";
+import { LandingTheme } from "../../theme/declare";
+import { ThemeProps, withTheme } from "../../theme/theme";
 
 export type AutoFitGridProps = {
 

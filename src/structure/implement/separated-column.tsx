@@ -7,7 +7,8 @@
 import { Classes } from "@sudoo/jss";
 import * as React from "react";
 import { getVerticalPaddingStyle, SizeType } from "../../common/style";
-import { LandingTheme, ThemeProps, withTheme } from "../../theme";
+import { LandingTheme } from "../../theme/declare";
+import { ThemeProps, withTheme } from "../../theme/theme";
 import { SeparatedColumnStyle } from "../style/separated-column.style";
 
 export type SeparatedColumnProps = {
