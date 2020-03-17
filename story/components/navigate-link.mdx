@@ -13,13 +13,16 @@ import { Playground } from "docz";
 <Playground>
     <NavigateLink
         title="Learn More"
-        after="→"
         href="https://example.com"
         onClick={() => console.log('Yeah!')}
     />
+    <br />
+    <NavigateLink
+        title="No Action"
+    />
 </Playground>
 
-## With Leading
+## With Leading And After
 
 <Playground>
     <NavigateLink
@@ -29,4 +32,19 @@ import { Playground } from "docz";
         href="https://example.com"
         onClick={() => console.log('Yeah!')}
     />
+</Playground>
+
+## Use Inline
+
+<Playground>
+    <span>
+        Something Before
+        <NavigateLink
+            leading="😊"
+            title="Learn More"
+            after="👉"
+            onClick={() => console.log('Yeah!')}
+        />
+        Something After
+    </span>
 </Playground>

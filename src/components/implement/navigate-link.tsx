@@ -38,7 +38,7 @@ class NavigateLinkBase extends React.Component<NavigateLinkWithThemeProps, Navig
         buttonHover: false,
     };
 
-    private readonly _NavigateLinkStyle: Classes = NavigateLinkStyle.use();
+    private readonly _navigateLinkStyle: Classes = NavigateLinkStyle.use();
 
     public constructor(props: NavigateLinkWithThemeProps) {
 
@@ -51,11 +51,12 @@ class NavigateLinkBase extends React.Component<NavigateLinkWithThemeProps, Navig
     public render() {
 
         const theme: LandingTheme = this.props.theme;
+        const emphasize: boolean = this._isEmphasized();
 
         return (<a
             className={mergeClasses(
-                this._NavigateLinkStyle.button,
-                assertIfTrue(Boolean(this.props.onClick), this._NavigateLinkStyle.actionButton),
+                this._navigateLinkStyle.link,
+                assertIfTrue(emphasize, this._navigateLinkStyle.actionLink),
             )}
             style={{
                 ...theme.action.majorAction,
@@ -68,7 +69,7 @@ class NavigateLinkBase extends React.Component<NavigateLinkWithThemeProps, Navig
             onMouseLeave={this._handleOnLeave}
         >
             {this._renderLeading()}
-            <span>{this.props.title}</span>
+            {this._renderTitle()}
             {this._renderAfter()}
         </a>);
     }
@@ -79,7 +80,22 @@ class NavigateLinkBase extends React.Component<NavigateLinkWithThemeProps, Navig
             return null;
         }
 
-        return (<span>{this.props.leading}</span>);
+        return (<span>
+            {this.props.leading}
+        </span>);
+    }
+
+    private _renderTitle() {
+
+        const padLeft: boolean = this._isEmphasized() && Boolean(this.props.leading);
+        return (<span
+            className={mergeClasses(
+                this._navigateLinkStyle.actionField,
+                assertIfTrue(padLeft, this._navigateLinkStyle.actionMarginLeft),
+            )}
+        >
+            {this.props.title}
+        </span >);
     }
 
     private _renderAfter() {
@@ -88,7 +104,15 @@ class NavigateLinkBase extends React.Component<NavigateLinkWithThemeProps, Navig
             return null;
         }
 
-        return (<span>{this.props.after}</span>);
+        const padLeft: boolean = this._isEmphasized();
+        return (<span
+            className={mergeClasses(
+                this._navigateLinkStyle.actionField,
+                assertIfTrue(padLeft, this._navigateLinkStyle.actionMarginLeft),
+            )}
+        >
+            {this.props.after}
+        </span>);
     }
 
     private _getColorStyle(): React.CSSProperties {
@@ -129,11 +153,7 @@ class NavigateLinkBase extends React.Component<NavigateLinkWithThemeProps, Navig
             return false;
         }
 
-        if (Boolean(this.props.onClick)) {
-            return true;
-        }
-
-        return false;
+        return Boolean(this.props.onClick) || Boolean(this.props.href);
     }
 }
 
