@@ -1,7 +1,7 @@
 /**
  * @author WMXPY
  * @namespace Landing_Structure
- * @description Separated Column
+ * @description Separated Column Style
  */
 
 import { StyleManager, Styles } from "@sudoo/jss";

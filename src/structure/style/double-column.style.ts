@@ -1,7 +1,7 @@
 /**
  * @author WMXPY
  * @namespace Landing_Structure
- * @description Double Column
+ * @description Double Column Style
  */
 
 import { StyleManager, Styles } from "@sudoo/jss";
