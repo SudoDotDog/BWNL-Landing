@@ -10,7 +10,7 @@ import { landingStyleCollection } from "../../style";
 export const NavigateButtonStyleBase: Styles = {
 
     button: {
-        fontWeight: 'bold',
+        fontWeight: 'normal',
         border: '0px',
         outline: '0px',
         paddingLeft: '5px',

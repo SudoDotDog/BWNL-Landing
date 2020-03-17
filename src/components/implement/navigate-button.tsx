@@ -16,6 +16,9 @@ export type NavigateButtonProps = {
     readonly onClick?: () => void;
     readonly onHoverStatesChange?: (buttonHover: boolean) => void;
 
+    readonly regularColor?: string;
+    readonly emphasizeColor?: string;
+
     readonly style?: React.CSSProperties;
 };
 
@@ -46,7 +49,6 @@ class NavigateButtonBase extends React.Component<NavigateButtonWithThemeProps, N
     public render() {
 
         const theme: LandingTheme = this.props.theme;
-        const emphasize: boolean = this._isEmphasized();
 
         return (<button
             className={mergeClasses(
@@ -55,9 +57,8 @@ class NavigateButtonBase extends React.Component<NavigateButtonWithThemeProps, N
             )}
             style={{
                 ...theme.action.majorAction,
-                color: emphasize
-                    ? theme.color.majorColor.emphasize
-                    : theme.color.majorColor.regular,
+                ...this._getColorStyle(),
+                ...this.props.style,
             }}
             onClick={this.props.onClick}
             onMouseEnter={this._handleOnEnter}
@@ -65,6 +66,21 @@ class NavigateButtonBase extends React.Component<NavigateButtonWithThemeProps, N
         >
             {this.props.title}
         </button>);
+    }
+
+    private _getColorStyle(): React.CSSProperties {
+
+        const theme: LandingTheme = this.props.theme;
+        const emphasize: boolean = this._isEmphasized();
+
+        const emphasizeColor: string = this.props.emphasizeColor ?? theme.color.majorColor.emphasize;
+        const regularColor: string = this.props.regularColor ?? theme.color.majorColor.regular;
+
+        return {
+            color: emphasize
+                ? emphasizeColor
+                : regularColor,
+        };
     }
 
     private _handleOnEnter(): void {

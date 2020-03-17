@@ -19,15 +19,16 @@ import { Block, DoubleColumn, Header, LandingThemeProvider, MajorTitle, Separate
             </Centered>
         </Header>
         <Block
-            backgroundImage="https://cdn.pixabay.com/photo/2016/12/01/18/17/mobile-phone-1875813_960_720.jpg"
+            backgroundImage="https://cdn.pixabay.com/photo/2016/06/02/02/33/triangles-1430105_960_720.png"
         >
             <Centered>
                 <SeparatedColumn 
-                    left={<div>Logo</div>}
+                    left={<div style={{ color: 'white' }}>Logo</div>}
                     verticalPadding="small"
                     right={<>
                         <DropdownNavigateButton 
                             title="Product"
+                            regularColor="white"
                         >
                             <div style={{
                             width: '300px', 
@@ -38,6 +39,7 @@ import { Block, DoubleColumn, Header, LandingThemeProvider, MajorTitle, Separate
                         </DropdownNavigateButton>
                         <NavigateButton 
                             title="Pricing"
+                            regularColor="white"
                             onClick={() => console.log('Yeah!')}
                         />
                     </>}
