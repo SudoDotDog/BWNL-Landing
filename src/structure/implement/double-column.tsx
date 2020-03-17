@@ -9,7 +9,7 @@ import * as React from "react";
 import { LandingTheme, ThemeProps, withTheme } from "../../theme";
 import { DoubleColumnStyle } from "../style/double-column.style";
 
-export type DoubleColumnSectionProps = {
+export type DoubleColumnProps = {
 
     readonly left: React.ReactNode;
     readonly right: React.ReactNode;
@@ -17,9 +17,9 @@ export type DoubleColumnSectionProps = {
     readonly style?: React.CSSProperties;
 };
 
-type DoubleColumnSectionWithThemeProps = DoubleColumnSectionProps & ThemeProps;
+type DoubleColumnWithThemeProps = DoubleColumnProps & ThemeProps;
 
-class DoubleColumnSectionBase extends React.PureComponent<DoubleColumnSectionWithThemeProps> {
+class DoubleColumnBase extends React.PureComponent<DoubleColumnWithThemeProps> {
 
     private readonly _doubleColumnStyle: Classes = DoubleColumnStyle.use();
 
@@ -45,4 +45,4 @@ class DoubleColumnSectionBase extends React.PureComponent<DoubleColumnSectionWit
     }
 }
 
-export const DoubleColumnSection: React.ComponentType<DoubleColumnSectionProps> = withTheme(DoubleColumnSectionBase);
+export const DoubleColumn: React.ComponentType<DoubleColumnProps> = withTheme(DoubleColumnBase);
