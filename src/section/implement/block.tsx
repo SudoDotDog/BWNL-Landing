@@ -10,6 +10,7 @@ import { LandingTheme, ThemeProps, withTheme } from "../../theme";
 export type BlockProps = {
 
     readonly style?: React.CSSProperties;
+    readonly className?: string;
 };
 
 type BlockWithThemeProps = BlockProps & ThemeProps;
@@ -20,9 +21,12 @@ class BlockBase extends React.PureComponent<BlockWithThemeProps> {
 
         const theme: LandingTheme = this.props.theme;
 
-        return (<section style={{
-            ...this.props.style,
-        }}>
+        return (<section
+            className={this.props.className}
+            style={{
+                ...this.props.style,
+            }}
+        >
             {this.props.children}
         </section>);
     }

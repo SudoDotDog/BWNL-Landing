@@ -9,6 +9,12 @@ import * as React from "react";
 
 export type LandingTheme = {
 
+    readonly block: {
+        readonly centered: {
+            readonly maxWidth: string;
+            readonly minWidth: string;
+        };
+    },
     readonly color: {
         readonly majorColor: {
             readonly regular: string;
@@ -35,6 +41,12 @@ const getDefaultTheme = (): LandingTheme => {
 
     return {
 
+        block: {
+            centered: {
+                maxWidth: '80%',
+                minWidth: '256px',
+            },
+        },
         color: {
             majorColor: {
                 regular: NAVY,

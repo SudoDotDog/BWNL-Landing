@@ -5,6 +5,7 @@
  */
 
 export * from "./implement/block";
+export * from "./implement/centered";
 export * from "./implement/footer";
 export * from "./implement/header";
 
