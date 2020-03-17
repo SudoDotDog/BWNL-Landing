@@ -3,7 +3,7 @@ menu: Example
 name: Simple
 ---
 
-import { Block, DoubleColumn, Header, LandingThemeProvider, MajorTitle, SeparatedColumn } from "../../src/index";
+import { Block, DoubleColumn, Header, LandingThemeProvider, MajorTitle, SeparatedColumn, Centered } from "../../src/index";
 
 # Landing Simple Example
 
@@ -11,25 +11,32 @@ import { Block, DoubleColumn, Header, LandingThemeProvider, MajorTitle, Separate
     <LandingThemeProvider value={{}}>
 
         <Header>
-            <SeparatedColumn 
-                left={<div>Logo</div>}
-                right={<a>Login</a>}
-            />
+            <Centered
+                maxWidth='600px'
+            >
+                <SeparatedColumn 
+                    left={<div>Logo</div>}
+                    right={<a>Login</a>}
+                />
+            </Centered>
         </Header>
         <Block
             style={{
-                padding: '100px',
                 color: 'white',
             }}
             backgroundImage="https://cdn.pixabay.com/photo/2016/12/01/18/17/mobile-phone-1875813_960_720.jpg"
         >
-            <DoubleColumn
-                left={<MajorTitle
-                    title="#1 Product of Something and Something else"
-                    subtitle="Good and Bad, Best Feature, Worst Landing Page"
-                />}
-                right={<div>123</div>}
-            />
+            <Centered
+                maxWidth='600px'
+            >
+                <DoubleColumn
+                    left={<MajorTitle
+                        title="#1 Product of Something and Something else"
+                        subtitle="Good and Bad, Best Feature, Worst Landing Page"
+                    />}
+                    right={<div>123</div>}
+                />
+            </Centered>
         </Block>
     </LandingThemeProvider>
 </div>

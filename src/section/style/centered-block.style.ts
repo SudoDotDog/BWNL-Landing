@@ -1,7 +1,7 @@
 /**
  * @author WMXPY
  * @namespace Landing_Section
- * @description Centered Block
+ * @description Centered Block Style
  */
 
 import { StyleManager, Styles } from "@sudoo/jss";

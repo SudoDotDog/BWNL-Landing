@@ -1,13 +1,13 @@
 /**
  * @author WMXPY
  * @namespace Landing_Section
- * @description CenteredBlock
+ * @description Centered Block
  */
 
 import { Classes } from "@sudoo/jss";
 import * as React from "react";
 import { LandingTheme, ThemeProps, withTheme } from "../../theme";
-import { CenteredBlockStyle } from "../style/centered.style";
+import { CenteredBlockStyle } from "../style/centered-block.style";
 import { Block } from "./block";
 
 export type CenteredBlockProps = {

@@ -28,7 +28,10 @@ class DoubleColumnBase extends React.PureComponent<DoubleColumnWithThemeProps> {
         const theme: LandingTheme = this.props.theme;
 
         return (<div
-            style={this.props.style}
+            style={{
+                ...theme.block.verticalPadding.large,
+                ...this.props.style,
+            }}
             className={this._doubleColumnStyle.cover}
         >
             <div

@@ -10,6 +10,7 @@ import { landingStyleCollection } from "../../style";
 export const SeparatedColumnStyleBase: Styles = {
 
     cover: {
+        width: '100%',
         display: 'flex',
         flexWrap: 'wrap',
         alignItems: 'center',

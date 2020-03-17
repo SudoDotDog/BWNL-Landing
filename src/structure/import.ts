@@ -4,6 +4,7 @@
  * @description Import
  */
 
+export * from "./implement/centered";
 export * from "./implement/double-column";
 export * from "./implement/separated-column";
 

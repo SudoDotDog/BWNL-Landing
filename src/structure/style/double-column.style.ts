@@ -16,14 +16,16 @@ export const DoubleColumnStyleBase: Styles = {
         justifyContent: 'center',
     },
     left: {
-        margin: '8px',
+        marginTop: '8px',
+        marginBottom: '8px',
         flex: 1,
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
     },
     right: {
-        margin: '8px',
+        marginTop: '8px',
+        marginBottom: '8px',
         flex: 1,
         display: 'flex',
         alignItems: 'center',
