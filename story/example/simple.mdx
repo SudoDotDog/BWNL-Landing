@@ -1,0 +1,28 @@
+---
+menu: Example
+name: Simple
+---
+
+import { Block, DoubleColumn, Header, LandingThemeProvider, MajorTitle } from "../../src/index";
+
+# Landing Simple Example
+
+<div style={{ border: '2px solid black' }}>
+    <LandingThemeProvider value={{}}>
+
+        <Header>
+            Hello
+        </Header>
+        <Block
+            backgroundImage="https://cdn.pixabay.com/photo/2016/12/01/18/17/mobile-phone-1875813_960_720.jpg"
+        >
+            <DoubleColumn
+                left={<MajorTitle
+                    title="Good"
+                    subtitle="Good Good"
+                />}
+                right={<div>123</div>}
+            />
+        </Block>
+    </LandingThemeProvider>
+</div>

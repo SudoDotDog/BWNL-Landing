@@ -27,7 +27,7 @@ class DoubleColumnBase extends React.PureComponent<DoubleColumnWithThemeProps> {
 
         const theme: LandingTheme = this.props.theme;
 
-        return (<section
+        return (<div
             style={this.props.style}
             className={this._doubleColumnStyle.cover}
         >
@@ -41,7 +41,7 @@ class DoubleColumnBase extends React.PureComponent<DoubleColumnWithThemeProps> {
             >
                 {this.props.right}
             </div>
-        </section>);
+        </div>);
     }
 }
 

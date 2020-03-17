@@ -1,6 +1,6 @@
 {
   "name": "@bwnl/landing",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": ":star: Landing Page Components",
   "directories": {
     "doc": "docs"
@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "@bwnl/shiny-inline": "^1.1.0",
-    "@sudoo/jss": "^1.6.0"
+    "@sudoo/jss": "^1.7.0"
   },
   "devDependencies": {
     "@sudoo/io": "^1.7.0",

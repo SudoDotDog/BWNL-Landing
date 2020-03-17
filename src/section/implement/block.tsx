@@ -9,6 +9,8 @@ import { LandingTheme, ThemeProps, withTheme } from "../../theme";
 
 export type BlockProps = {
 
+    readonly backgroundImage?: string;
+
     readonly style?: React.CSSProperties;
     readonly className?: string;
 };
@@ -25,10 +27,21 @@ class BlockBase extends React.PureComponent<BlockWithThemeProps> {
             className={this.props.className}
             style={{
                 ...this.props.style,
+                ...this._getBackgroundStyle(),
             }}
         >
             {this.props.children}
         </section>);
+    }
+
+    private _getBackgroundStyle(): React.CSSProperties {
+
+        if (this.props.backgroundImage) {
+            return {
+                backgroundImage: this.props.backgroundImage,
+            };
+        }
+        return {};
     }
 }
 
