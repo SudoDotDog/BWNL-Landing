@@ -14,8 +14,11 @@ import { SeparatedColumnStyle } from "../style/separated-column.style";
 
 export type SeparatedColumnProps = {
 
-    readonly left: React.ReactNode;
-    readonly right: React.ReactNode;
+    readonly left?: React.ReactNode;
+    readonly right?: React.ReactNode;
+
+    readonly leftMinWidth?: string;
+    readonly rightMinWidth?: string;
 
     readonly style?: React.CSSProperties;
 } & VerticalPaddingProps;
@@ -37,9 +40,28 @@ class SeparatedColumnBase extends React.PureComponent<SeparatedColumnWithThemePr
             }}
             className={this._separatedStyle.cover}
         >
-            <div>{this.props.left}</div>
-            <div>{this.props.right}</div>
+            <div
+                style={this._getMinWidthStyle(this.props.leftMinWidth)}
+            >
+                {this.props.left}
+            </div>
+            <div
+                style={this._getMinWidthStyle(this.props.rightMinWidth)}
+            >
+                {this.props.right}
+            </div>
         </div>);
+    }
+
+    private _getMinWidthStyle(width?: string): React.CSSProperties {
+
+        if (!width) {
+            return {};
+        }
+
+        return {
+            minWidth: width,
+        };
     }
 }
 

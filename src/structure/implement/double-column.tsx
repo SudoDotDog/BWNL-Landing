@@ -14,8 +14,11 @@ import { DoubleColumnStyle } from "../style/double-column.style";
 
 export type DoubleColumnProps = {
 
-    readonly left: React.ReactNode;
-    readonly right: React.ReactNode;
+    readonly left?: React.ReactNode;
+    readonly right?: React.ReactNode;
+
+    readonly leftMinWidth?: string;
+    readonly rightMinWidth?: string;
 
     readonly style?: React.CSSProperties;
 } & VerticalPaddingProps;
@@ -39,15 +42,28 @@ class DoubleColumnBase extends React.PureComponent<DoubleColumnWithThemeProps> {
         >
             <div
                 className={this._doubleColumnStyle.left}
+                style={this._getMinWidthStyle(this.props.leftMinWidth)}
             >
                 {this.props.left}
             </div>
             <div
                 className={this._doubleColumnStyle.right}
+                style={this._getMinWidthStyle(this.props.rightMinWidth)}
             >
                 {this.props.right}
             </div>
         </div>);
+    }
+
+    private _getMinWidthStyle(width?: string): React.CSSProperties {
+
+        if (!width) {
+            return {};
+        }
+
+        return {
+            minWidth: width,
+        };
     }
 }
 

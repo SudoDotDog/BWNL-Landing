@@ -14,11 +14,14 @@ import { PennantColumnStyle } from "../style/pennant-column.style";
 
 export type PennantColumnProps = {
 
-    readonly left: React.ReactNode;
-    readonly right: React.ReactNode;
+    readonly left?: React.ReactNode;
+    readonly right?: React.ReactNode;
 
     readonly raiseLeft?: string;
     readonly raiseRight?: string;
+
+    readonly leftMinWidth?: string;
+    readonly rightMinWidth?: string;
 
     readonly style?: React.CSSProperties;
 } & VerticalPaddingProps;
@@ -45,7 +48,10 @@ class PennantColumnBase extends React.PureComponent<PennantColumnWithThemeProps>
                     this._pennantColumnStyle.left,
                     assertIfTrue(this.props.raiseLeft, this._pennantColumnStyle.raisedLeft),
                 )}
-                style={this._getLeftStyle()}
+                style={{
+                    ...this._getMinWidthStyle(this.props.leftMinWidth),
+                    ...this._getLeftStyle(),
+                }}
             >
                 {this.props.left}
             </div>
@@ -54,11 +60,25 @@ class PennantColumnBase extends React.PureComponent<PennantColumnWithThemeProps>
                     this._pennantColumnStyle.right,
                     assertIfTrue(this.props.raiseRight, this._pennantColumnStyle.raisedRight),
                 )}
-                style={this._getRightStyle()}
+                style={{
+                    ...this._getMinWidthStyle(this.props.rightMinWidth),
+                    ...this._getRightStyle(),
+                }}
             >
                 {this.props.right}
             </div>
         </div>);
+    }
+
+    private _getMinWidthStyle(width?: string): React.CSSProperties {
+
+        if (!width) {
+            return {};
+        }
+
+        return {
+            minWidth: width,
+        };
     }
 
     private _getLeftStyle(): React.CSSProperties {
