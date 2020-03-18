@@ -4,7 +4,8 @@
  * @description Outlined Button
  */
 
-import { Classes, mergeClasses, assertIfTrue } from "@sudoo/jss";
+import { convertHexToRGBA, TRANSPARENT } from "@bwnl/shiny-inline";
+import { Classes } from "@sudoo/jss";
 import * as React from "react";
 import { LandingTheme } from "../../theme/declare";
 import { ThemeProps, withTheme } from "../../theme/theme";
@@ -76,6 +77,9 @@ class OutlinedButtonBase extends React.Component<OutlinedButtonWithThemeProps, O
             borderColor: emphasize
                 ? emphasizeColor
                 : regularColor,
+            backgroundColor: emphasize
+                ? convertHexToRGBA(emphasizeColor, '.1')
+                : TRANSPARENT,
         };
     }
 

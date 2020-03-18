@@ -13,8 +13,6 @@ export const OutlinedButtonStyleBase: Styles = {
         borderWidth: '1px',
         borderStyle: 'solid',
         borderRadius: '4px',
-        paddingLeft: '5px',
-        paddingRight: '5px',
     },
 };
 
