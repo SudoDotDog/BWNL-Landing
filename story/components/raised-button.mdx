@@ -8,11 +8,35 @@ import { Playground } from "docz";
 
 # Raised Button
 
-## Simple
+## Small
 
 <Playground>
     <RaisedButton 
         title="Learn More"
+        href="https://example.com"
+    />
+    <RaisedButton 
+        title="Click Me"
+        onClick={() => console.log('Yeah!')}
+    />
+</Playground>
+
+## Medium
+
+<Playground>
+    <RaisedButton 
+        title="Learn More"
+        size="medium"
+        onClick={() => console.log('Yeah!')}
+    />
+</Playground>
+
+## Large
+
+<Playground>
+    <RaisedButton 
+        title="Learn More"
+        size="large"
         onClick={() => console.log('Yeah!')}
     />
 </Playground>

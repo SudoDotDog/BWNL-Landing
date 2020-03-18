@@ -3,7 +3,7 @@ menu: Example
 name: Simple
 ---
 
-import { Block, DoubleColumn, Header, LandingThemeProvider, MajorTitle, SeparatedColumn, Centered, NavigateButton, DropdownNavigateButton, MinorTitle, SingleColumn, AutoFitGrid, Feature } from "../../src/index";
+import { Block, DoubleColumn, Header, LandingThemeProvider, MajorTitle, SeparatedColumn, Centered, NavigateButton, DropdownNavigateButton, MinorTitle, SingleColumn, AutoFitGrid, Feature, RaisedButton } from "../../src/index";
 
 # Landing Simple Example
 
@@ -111,6 +111,17 @@ import { Block, DoubleColumn, Header, LandingThemeProvider, MajorTitle, Separate
                         action="Learn More ->"
                     />
                 </AutoFitGrid>
+                <SingleColumn
+                    verticalPadding="small"
+                    style={{
+                        paddingTop: '0px',
+                    }}
+                >
+                    <RaisedButton
+                        title="Learn More"
+                        href="https://example.com"
+                    />
+                </SingleColumn>
             </Centered>
         </Block>
     </LandingThemeProvider>
