@@ -4,16 +4,15 @@
  * @description Outlined Button
  */
 
+import { Classes } from "@sudoo/jss";
 import * as React from "react";
-import { SizeType } from "../../common/style";
 import { LandingTheme } from "../../theme/declare";
 import { ThemeProps, withTheme } from "../../theme/theme";
-import { Classes } from "@sudoo/jss";
 import { OutlinedButtonStyle } from "../style/outlined-button.style";
 
 export type OutlinedButtonProps = {
 
-    readonly verticalPadding?: SizeType;
+    readonly title: string;
 
     readonly style?: React.CSSProperties;
 };
@@ -33,7 +32,7 @@ class OutlinedButtonBase extends React.PureComponent<OutlinedButtonWithThemeProp
                 ...this.props.style,
             }}
         >
-            {this.props.children}
+            {this.props.title}
         </button>);
     }
 }

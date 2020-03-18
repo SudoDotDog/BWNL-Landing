@@ -9,7 +9,9 @@ import { landingStyleCollection } from "../../style";
 
 export const NavigateButtonStyleBase: Styles = {
 
-    button: {
+    link: {
+        textDecoration: 'none',
+
         fontWeight: 'normal',
         border: '0px',
         outline: '0px',
@@ -19,7 +21,7 @@ export const NavigateButtonStyleBase: Styles = {
 
         transition: '0.3s all',
     },
-    actionButton: {
+    actionLink: {
 
         cursor: 'pointer',
     },

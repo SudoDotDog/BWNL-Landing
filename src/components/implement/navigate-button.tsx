@@ -14,6 +14,7 @@ export type NavigateButtonProps = {
 
     readonly title: React.ReactNode;
 
+    readonly href?: string;
     readonly onClick?: () => void;
     readonly onHoverStatesChange?: (buttonHover: boolean) => void;
 
@@ -51,22 +52,23 @@ class NavigateButtonBase extends React.Component<NavigateButtonWithThemeProps, N
 
         const theme: LandingTheme = this.props.theme;
 
-        return (<button
+        return (<a
             className={mergeClasses(
-                this._navigateButtonStyle.button,
-                assertIfTrue(Boolean(this.props.onClick), this._navigateButtonStyle.actionButton),
+                this._navigateButtonStyle.link,
+                assertIfTrue(Boolean(this.props.onClick), this._navigateButtonStyle.actionLink),
             )}
             style={{
                 ...theme.action.majorAction,
                 ...this._getColorStyle(),
                 ...this.props.style,
             }}
+            href={this.props.href}
             onClick={this.props.onClick}
             onMouseEnter={this._handleOnEnter}
             onMouseLeave={this._handleOnLeave}
         >
             {this.props.title}
-        </button>);
+        </a>);
     }
 
     private _getColorStyle(): React.CSSProperties {
@@ -110,11 +112,8 @@ class NavigateButtonBase extends React.Component<NavigateButtonWithThemeProps, N
             return false;
         }
 
-        if (Boolean(this.props.onClick)) {
-            return true;
-        }
-
-        return false;
+        return Boolean(this.props.onClick)
+            || Boolean(this.props.href);
     }
 }
 

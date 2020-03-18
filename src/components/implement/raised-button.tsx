@@ -4,16 +4,15 @@
  * @description Raised Button
  */
 
+import { Classes } from "@sudoo/jss";
 import * as React from "react";
-import { SizeType } from "../../common/style";
 import { LandingTheme } from "../../theme/declare";
 import { ThemeProps, withTheme } from "../../theme/theme";
-import { Classes } from "@sudoo/jss";
 import { RaisedButtonStyle } from "../style/raised-button.style";
 
 export type RaisedButtonProps = {
 
-    readonly verticalPadding?: SizeType;
+    readonly title: string;
 
     readonly style?: React.CSSProperties;
 };
@@ -33,7 +32,7 @@ class RaisedButtonBase extends React.PureComponent<RaisedButtonWithThemeProps> {
                 ...this.props.style,
             }}
         >
-            {this.props.children}
+            {this.props.title}
         </button>);
     }
 }

@@ -52,6 +52,7 @@ class DropdownNavigateButtonBase extends React.Component<DropdownNavigateButtonW
             <NavigateButton
                 title={this.props.title}
                 style={this.props.style}
+                href={this.props.href}
                 onClick={this.props.onClick}
                 emphasizeColor={this.props.emphasizeColor}
                 regularColor={this.props.regularColor}
