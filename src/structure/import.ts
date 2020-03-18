@@ -4,6 +4,7 @@
  * @description Import
  */
 
+export * from "./declare/vertical-padding";
 export * from "./implement/auto-fit-grid";
 export * from "./implement/centered";
 export * from "./implement/double-column";

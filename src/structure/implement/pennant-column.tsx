@@ -4,11 +4,12 @@
  * @description Pennant Column
  */
 
-import { Classes, mergeClasses, assertIfTrue } from "@sudoo/jss";
+import { assertIfTrue, Classes, mergeClasses } from "@sudoo/jss";
 import * as React from "react";
-import { getVerticalPaddingStyle, SizeType } from "../../common/style";
+import { getVerticalPaddingStyle } from "../../common/style";
 import { LandingTheme } from "../../theme/declare";
 import { ThemeProps, withTheme } from "../../theme/theme";
+import { VerticalPaddingProps } from "../declare/vertical-padding";
 import { PennantColumnStyle } from "../style/pennant-column.style";
 
 export type PennantColumnProps = {
@@ -19,10 +20,8 @@ export type PennantColumnProps = {
     readonly raiseLeft?: string;
     readonly raiseRight?: string;
 
-    readonly verticalPadding?: SizeType;
-
     readonly style?: React.CSSProperties;
-};
+} & VerticalPaddingProps;
 
 type PennantColumnWithThemeProps = PennantColumnProps & ThemeProps;
 

@@ -131,8 +131,6 @@ class DropdownNavigateButtonBase extends React.Component<DropdownNavigateButtonW
 
         return this.state.buttonHover || this.state.hover;
     }
-
-    private _getAttch
 }
 
 export const DropdownNavigateButton: React.ComponentType<DropdownNavigateButtonProps> = withTheme(DropdownNavigateButtonBase);

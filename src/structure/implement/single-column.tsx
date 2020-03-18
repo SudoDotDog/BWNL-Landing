@@ -5,16 +5,17 @@
  */
 
 import * as React from "react";
-import { getVerticalPaddingStyle, SizeType } from "../../common/style";
+import { getVerticalPaddingStyle } from "../../common/style";
 import { LandingTheme } from "../../theme/declare";
 import { ThemeProps, withTheme } from "../../theme/theme";
+import { VerticalPaddingProps } from "../declare/vertical-padding";
 
 export type SingleColumnProps = {
 
-    readonly verticalPadding?: SizeType;
+    readonly center?: boolean;
 
     readonly style?: React.CSSProperties;
-};
+} & VerticalPaddingProps;
 
 type SingleColumnWithThemeProps = SingleColumnProps & ThemeProps;
 
@@ -27,11 +28,25 @@ class SingleColumnBase extends React.PureComponent<SingleColumnWithThemeProps> {
         return (<div
             style={{
                 ...getVerticalPaddingStyle(theme, this.props.verticalPadding),
+                ...this._getCenterStyle(),
                 ...this.props.style,
             }}
         >
             {this.props.children}
         </div>);
+    }
+
+    private _getCenterStyle(): React.CSSProperties {
+
+        if (!this.props.center) {
+            return {};
+        }
+
+        return {
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+        }
     }
 }
 

@@ -6,9 +6,10 @@
 
 import { Classes } from "@sudoo/jss";
 import * as React from "react";
-import { getVerticalPaddingStyle, SizeType } from "../../common/style";
+import { getVerticalPaddingStyle } from "../../common/style";
 import { LandingTheme } from "../../theme/declare";
 import { ThemeProps, withTheme } from "../../theme/theme";
+import { VerticalPaddingProps } from "../declare/vertical-padding";
 import { DoubleColumnStyle } from "../style/double-column.style";
 
 export type DoubleColumnProps = {
@@ -16,9 +17,8 @@ export type DoubleColumnProps = {
     readonly left: React.ReactNode;
     readonly right: React.ReactNode;
 
-    readonly verticalPadding?: SizeType;
     readonly style?: React.CSSProperties;
-};
+} & VerticalPaddingProps;
 
 type DoubleColumnWithThemeProps = DoubleColumnProps & ThemeProps;
 

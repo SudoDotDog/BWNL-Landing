@@ -5,9 +5,10 @@
  */
 
 import * as React from "react";
-import { getVerticalPaddingStyle, SizeType } from "../../common/style";
+import { getVerticalPaddingStyle } from "../../common/style";
 import { LandingTheme } from "../../theme/declare";
 import { ThemeProps, withTheme } from "../../theme/theme";
+import { VerticalPaddingProps } from "../declare/vertical-padding";
 
 export type AutoFitGridProps = {
 
@@ -17,9 +18,8 @@ export type AutoFitGridProps = {
     readonly columnGap?: string;
     readonly rowGap?: string;
 
-    readonly verticalPadding?: SizeType;
     readonly style?: React.CSSProperties;
-};
+} & VerticalPaddingProps;
 
 type AutoFitGridWithThemeProps = AutoFitGridProps & ThemeProps;
 
