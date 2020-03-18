@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "@bwnl/shiny-inline": "^1.1.0",
-    "@sudoo/jss": "^1.7.0"
+    "@sudoo/jss": "^1.7.1"
   },
   "devDependencies": {
     "@sudoo/io": "^1.7.0",
