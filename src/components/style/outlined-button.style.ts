@@ -10,20 +10,11 @@ import { landingStyleCollection } from "../../style";
 export const OutlinedButtonStyleBase: Styles = {
 
     link: {
-        textDecoration: 'none',
-
-        fontWeight: 'normal',
-        border: '0px',
-        outline: '0px',
+        borderWidth: '1px',
+        borderStyle: 'solid',
+        borderRadius: '4px',
         paddingLeft: '5px',
         paddingRight: '5px',
-        backgroundColor: 'transparent',
-
-        transition: '0.3s all',
-    },
-    actionLink: {
-
-        cursor: 'pointer',
     },
 };
 

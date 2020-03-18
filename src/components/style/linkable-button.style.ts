@@ -13,7 +13,6 @@ export const LinkableButtonStyleBase: Styles = {
         textDecoration: 'none',
 
         fontWeight: 'normal',
-        border: '0px',
         outline: '0px',
 
         transition: '0.3s all',

@@ -9,6 +9,7 @@ import * as React from "react";
 import { LandingTheme } from "../../theme/declare";
 import { ThemeProps, withTheme } from "../../theme/theme";
 import { OutlinedButtonStyle } from "../style/outlined-button.style";
+import { LinkableButton } from "./linkable-button";
 
 export type OutlinedButtonProps = {
 
@@ -25,7 +26,7 @@ export type OutlinedButtonProps = {
 
 export type OutlinedButtonStates = {
 
-    readonly buttonHover: boolean;
+    readonly hover: boolean;
 };
 
 type OutlinedButtonWithThemeProps = OutlinedButtonProps & ThemeProps;
@@ -34,7 +35,7 @@ class OutlinedButtonBase extends React.Component<OutlinedButtonWithThemeProps, O
 
     public readonly state: OutlinedButtonStates = {
 
-        buttonHover: false,
+        hover: false,
     };
 
     private readonly _outlinedButtonStyle: Classes = OutlinedButtonStyle.use();
@@ -43,35 +44,27 @@ class OutlinedButtonBase extends React.Component<OutlinedButtonWithThemeProps, O
 
         super(props);
 
-        this._handleOnEnter = this._handleOnEnter.bind(this);
-        this._handleOnLeave = this._handleOnLeave.bind(this);
+        this._handleHoverChange = this._handleHoverChange.bind(this);
     }
 
     public render() {
 
-        const theme: LandingTheme = this.props.theme;
-
-        return (<a
-
-            className={mergeClasses(
-                this._outlinedButtonStyle.link,
-                assertIfTrue(Boolean(this.props.onClick), this._outlinedButtonStyle.actionLink),
-            )}
+        return (<LinkableButton
+            title={this.props.title}
+            className={this._outlinedButtonStyle.link}
             style={{
-                ...theme.action.majorAction,
-                ...this._getColorStyle(),
+                ...this._getBorderStyle(),
                 ...this.props.style,
             }}
+            onHoverStatesChange={this._handleHoverChange}
             href={this.props.href}
             onClick={this.props.onClick}
-            onMouseEnter={this._handleOnEnter}
-            onMouseLeave={this._handleOnLeave}
         >
             {this.props.title}
-        </a>);
+        </LinkableButton>);
     }
 
-    private _getColorStyle(): React.CSSProperties {
+    private _getBorderStyle(): React.CSSProperties {
 
         const theme: LandingTheme = this.props.theme;
         const emphasize: boolean = this._isEmphasized();
@@ -80,32 +73,22 @@ class OutlinedButtonBase extends React.Component<OutlinedButtonWithThemeProps, O
         const regularColor: string = this.props.regularColor ?? theme.color.majorColor.regular;
 
         return {
-            color: emphasize
+            borderColor: emphasize
                 ? emphasizeColor
                 : regularColor,
         };
     }
 
-    private _handleOnEnter(): void {
-
-        this._handleHoverChange(true);
-    }
-
-    private _handleOnLeave(): void {
-
-        this._handleHoverChange(false);
-    }
-
-    private _handleHoverChange(buttonHover: boolean): void {
+    private _handleHoverChange(hover: boolean): void {
 
         this.setState({
-            buttonHover,
+            hover,
         });
     }
 
     private _isEmphasized(): boolean {
 
-        if (!this.state.buttonHover) {
+        if (!this.state.hover) {
             return false;
         }
 

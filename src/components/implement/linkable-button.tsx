@@ -16,10 +16,12 @@ export type LinkableButtonProps = {
 
     readonly href?: string;
     readonly onClick?: () => void;
+    readonly onHoverStatesChange?: (buttonHover: boolean) => void;
 
     readonly regularColor?: string;
     readonly emphasizeColor?: string;
 
+    readonly className?: string;
     readonly style?: React.CSSProperties;
 };
 
@@ -52,8 +54,8 @@ class LinkableButtonBase extends React.Component<LinkableButtonWithThemeProps, L
         const theme: LandingTheme = this.props.theme;
 
         return (<a
-
             className={mergeClasses(
+                this.props.className,
                 this._linkableButtonStyle.link,
                 assertIfTrue(Boolean(this.props.onClick), this._linkableButtonStyle.actionLink),
             )}
@@ -98,6 +100,9 @@ class LinkableButtonBase extends React.Component<LinkableButtonWithThemeProps, L
 
     private _handleHoverChange(buttonHover: boolean): void {
 
+        if (this.props.onHoverStatesChange) {
+            this.props.onHoverStatesChange(buttonHover);
+        }
         this.setState({
             buttonHover,
         });
