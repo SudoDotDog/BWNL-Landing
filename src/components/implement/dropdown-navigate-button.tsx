@@ -8,10 +8,13 @@ import { Classes } from "@sudoo/jss";
 import * as React from "react";
 import { LandingTheme } from "../../theme/declare";
 import { ThemeProps, withTheme } from "../../theme/theme";
+import { DropdownNavigateButtonAttach, getDropdownNavigationButtonAttach } from "../declare/dropdown-navigate-button";
 import { DropdownNavigateButtonStyle } from "../style/dropdown-navigate-button.style";
 import { NavigateButton, NavigateButtonProps } from "./navigate-button";
 
 export type DropdownNavigateButtonProps = {
+
+    readonly attach?: DropdownNavigateButtonAttach;
 } & NavigateButtonProps;
 
 export type DropdownNavigateButtonStates = {
@@ -61,7 +64,8 @@ class DropdownNavigateButtonBase extends React.Component<DropdownNavigateButtonW
             <div
                 className={this._dropdownNavigateButtonStyle.dropdown}
                 style={{
-                    height: this._getDropdownHeight(),
+                    ...this._getDropdownAttachStyle(),
+                    ...this._getDropdownHeightStyle(),
                 }}
                 ref={this._dropdownRef}
                 onMouseEnter={this._handleOnEnter}
@@ -72,18 +76,38 @@ class DropdownNavigateButtonBase extends React.Component<DropdownNavigateButtonW
         </div>);
     }
 
-    private _getDropdownHeight(): string {
+    private _getDropdownAttachStyle(): React.CSSProperties {
+
+        const attach: DropdownNavigateButtonAttach = getDropdownNavigationButtonAttach(this.props.attach);
+
+        switch (attach) {
+            case 'left': return {
+                left: 0,
+            };
+            case 'right': return {
+                right: 0,
+            };
+        }
+    }
+
+    private _getDropdownHeightStyle(): React.CSSProperties {
 
         if (!this._dropdownRef.current) {
-            return '0px';
+            return {
+                height: '0px',
+            };
         }
 
         const expend: boolean = this._isExpended();
         if (expend) {
-            return `${this._dropdownRef.current.scrollHeight}px`;
+            return {
+                height: `${this._dropdownRef.current.scrollHeight}px`,
+            };
         }
 
-        return '0px';
+        return {
+            height: '0px',
+        };
     }
 
     private _handleOnEnter(): void {
@@ -107,6 +131,8 @@ class DropdownNavigateButtonBase extends React.Component<DropdownNavigateButtonW
 
         return this.state.buttonHover || this.state.hover;
     }
+
+    private _getAttch
 }
 
 export const DropdownNavigateButton: React.ComponentType<DropdownNavigateButtonProps> = withTheme(DropdownNavigateButtonBase);

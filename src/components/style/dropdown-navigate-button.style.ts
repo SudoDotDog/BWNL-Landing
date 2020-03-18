@@ -15,7 +15,6 @@ export const DropdownNavigateButtonStyleBase: Styles = {
     },
     dropdown: {
         top: '100%',
-        left: 0,
         overflow: 'hidden',
         position: 'absolute',
         transition: '0.3s all',
