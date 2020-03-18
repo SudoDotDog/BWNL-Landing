@@ -1,0 +1,41 @@
+---
+menu: Presentation
+name: Tilt Card
+---
+
+import { TiltCard } from "../../src/index";
+import { Playground } from "docz";
+
+# Tilt Card
+
+## Left
+
+<Playground>
+    <TiltCard
+        x={10}
+        y={20}
+    >
+        <div style={{
+            width: '300px', 
+            height: '400px', 
+            backgroundColor: 'blue',
+            color: 'white',
+        }}>Content</div>
+    </TiltCard>
+</Playground>
+
+## Right
+
+<Playground>
+    <TiltCard
+        x={-10}
+        y={20}
+    >
+        <div style={{
+            width: '300px', 
+            height: '400px', 
+            backgroundColor: 'blue',
+            color: 'white',
+        }}>Content</div>
+    </TiltCard>
+</Playground>
