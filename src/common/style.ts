@@ -23,6 +23,20 @@ export const getVerticalPaddingStyle = (theme: LandingTheme, size?: SizeType): R
     return {};
 };
 
+export const getComponentsButtonPaddingStyle = (theme: LandingTheme, size?: SizeType): React.CSSProperties => {
+
+    if (!size) {
+        return getComponentsButtonPaddingStyle(theme, 'small');
+    }
+
+    switch (size) {
+        case 'large': return theme.components.buttonPadding.large;
+        case 'medium': return theme.components.buttonPadding.medium;
+        case 'small': return theme.components.buttonPadding.small;
+    }
+    return {};
+};
+
 export const getPresentationContainerPaddingStyle = (theme: LandingTheme, size?: SizeType): React.CSSProperties => {
 
     if (!size) {

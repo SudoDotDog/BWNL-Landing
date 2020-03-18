@@ -7,6 +7,7 @@
 import { convertHexToRGBA, TRANSPARENT } from "@bwnl/shiny-inline";
 import { Classes } from "@sudoo/jss";
 import * as React from "react";
+import { getComponentsButtonPaddingStyle, SizeType } from "../../common/style";
 import { LandingTheme } from "../../theme/declare";
 import { ThemeProps, withTheme } from "../../theme/theme";
 import { OutlinedButtonStyle } from "../style/outlined-button.style";
@@ -21,6 +22,8 @@ export type OutlinedButtonProps = {
 
     readonly regularColor?: string;
     readonly emphasizeColor?: string;
+
+    readonly size?: SizeType;
 
     readonly style?: React.CSSProperties;
 };
@@ -50,10 +53,13 @@ class OutlinedButtonBase extends React.Component<OutlinedButtonWithThemeProps, O
 
     public render() {
 
+        const theme: LandingTheme = this.props.theme;
+
         return (<LinkableButton
             title={this.props.title}
             className={this._outlinedButtonStyle.link}
             style={{
+                ...getComponentsButtonPaddingStyle(theme, this.props.size),
                 ...this._getBorderStyle(),
                 ...this.props.style,
             }}

@@ -11,6 +11,28 @@ export const getDefaultTheme = (): LandingTheme => {
 
     return {
 
+        components: {
+            buttonPadding: {
+                large: {
+                    paddingLeft: '48px',
+                    paddingRight: '48px',
+                    paddingTop: '8px',
+                    paddingBottom: '8px',
+                },
+                medium: {
+                    paddingLeft: '24px',
+                    paddingRight: '24px',
+                    paddingTop: '8px',
+                    paddingBottom: '8px',
+                },
+                small: {
+                    paddingLeft: '8px',
+                    paddingRight: '8px',
+                    paddingTop: '3px',
+                    paddingBottom: '3px',
+                },
+            },
+        },
         presentation: {
             containerPadding: {
                 large: {

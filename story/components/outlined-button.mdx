@@ -8,11 +8,35 @@ import { Playground } from "docz";
 
 # Outlined Button
 
-## Simple
+## Small
 
 <Playground>
     <OutlinedButton 
         title="Learn More"
+        href="https://example.com"
+    />
+    <OutlinedButton 
+        title="Click Me"
+        onClick={() => console.log('Yeah!')}
+    />
+</Playground>
+
+## Medium
+
+<Playground>
+    <OutlinedButton 
+        title="Learn More"
+        size="medium"
+        onClick={() => console.log('Yeah!')}
+    />
+</Playground>
+
+## Large
+
+<Playground>
+    <OutlinedButton 
+        title="Learn More"
+        size="large"
         onClick={() => console.log('Yeah!')}
     />
 </Playground>

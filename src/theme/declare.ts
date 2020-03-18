@@ -6,6 +6,13 @@
 
 export type LandingTheme = {
 
+    readonly components: {
+        readonly buttonPadding: {
+            readonly large: React.CSSProperties;
+            readonly medium: React.CSSProperties;
+            readonly small: React.CSSProperties;
+        };
+    };
     readonly presentation: {
         readonly containerPadding: {
             readonly large: React.CSSProperties;
