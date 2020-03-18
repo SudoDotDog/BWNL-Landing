@@ -1,16 +1,16 @@
 /**
  * @author WMXPY
  * @namespace Landing_Components
- * @description Outlined Button
+ * @description Linkable Button
  */
 
 import { Classes, mergeClasses, assertIfTrue } from "@sudoo/jss";
 import * as React from "react";
 import { LandingTheme } from "../../theme/declare";
 import { ThemeProps, withTheme } from "../../theme/theme";
-import { OutlinedButtonStyle } from "../style/outlined-button.style";
+import { LinkableButtonStyle } from "../style/linkable-button.style";
 
-export type OutlinedButtonProps = {
+export type LinkableButtonProps = {
 
     readonly title: string;
 
@@ -23,23 +23,23 @@ export type OutlinedButtonProps = {
     readonly style?: React.CSSProperties;
 };
 
-export type OutlinedButtonStates = {
+export type LinkableButtonStates = {
 
     readonly buttonHover: boolean;
 };
 
-type OutlinedButtonWithThemeProps = OutlinedButtonProps & ThemeProps;
+type LinkableButtonWithThemeProps = LinkableButtonProps & ThemeProps;
 
-class OutlinedButtonBase extends React.Component<OutlinedButtonWithThemeProps, OutlinedButtonStates> {
+class LinkableButtonBase extends React.Component<LinkableButtonWithThemeProps, LinkableButtonStates> {
 
-    public readonly state: OutlinedButtonStates = {
+    public readonly state: LinkableButtonStates = {
 
         buttonHover: false,
     };
 
-    private readonly _outlinedButtonStyle: Classes = OutlinedButtonStyle.use();
+    private readonly _linkableButtonStyle: Classes = LinkableButtonStyle.use();
 
-    public constructor(props: OutlinedButtonWithThemeProps) {
+    public constructor(props: LinkableButtonWithThemeProps) {
 
         super(props);
 
@@ -54,8 +54,8 @@ class OutlinedButtonBase extends React.Component<OutlinedButtonWithThemeProps, O
         return (<a
 
             className={mergeClasses(
-                this._outlinedButtonStyle.link,
-                assertIfTrue(Boolean(this.props.onClick), this._outlinedButtonStyle.actionLink),
+                this._linkableButtonStyle.link,
+                assertIfTrue(Boolean(this.props.onClick), this._linkableButtonStyle.actionLink),
             )}
             style={{
                 ...theme.action.majorAction,
@@ -114,4 +114,4 @@ class OutlinedButtonBase extends React.Component<OutlinedButtonWithThemeProps, O
     }
 }
 
-export const OutlinedButton: React.ComponentType<OutlinedButtonProps> = withTheme(OutlinedButtonBase);
+export const LinkableButton: React.ComponentType<LinkableButtonProps> = withTheme(LinkableButtonBase);

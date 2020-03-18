@@ -6,6 +6,7 @@
 
 export * from "./declare/dropdown-navigate-button";
 export * from "./implement/dropdown-navigate-button";
+export * from "./implement/linkable-button";
 export * from "./implement/navigate-button";
 export * from "./implement/navigate-link";
 export * from "./implement/outlined-button";

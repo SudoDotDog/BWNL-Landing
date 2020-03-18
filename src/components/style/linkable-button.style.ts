@@ -1,13 +1,13 @@
 /**
  * @author WMXPY
  * @namespace Landing_Components
- * @description Outlined Button Style
+ * @description Linkable Button Style
  */
 
 import { StyleManager, Styles } from "@sudoo/jss";
 import { landingStyleCollection } from "../../style";
 
-export const OutlinedButtonStyleBase: Styles = {
+export const LinkableButtonStyleBase: Styles = {
 
     link: {
         textDecoration: 'none',
@@ -15,9 +15,6 @@ export const OutlinedButtonStyleBase: Styles = {
         fontWeight: 'normal',
         border: '0px',
         outline: '0px',
-        paddingLeft: '5px',
-        paddingRight: '5px',
-        backgroundColor: 'transparent',
 
         transition: '0.3s all',
     },
@@ -27,4 +24,4 @@ export const OutlinedButtonStyleBase: Styles = {
     },
 };
 
-export const OutlinedButtonStyle: StyleManager = landingStyleCollection.hydrate('Components-Outlined-Button', OutlinedButtonStyleBase);
+export const LinkableButtonStyle: StyleManager = landingStyleCollection.hydrate('Components-Linkable-Button', LinkableButtonStyleBase);
