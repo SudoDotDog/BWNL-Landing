@@ -7,7 +7,7 @@
 import * as React from "react";
 import { LandingTheme } from "../../theme/declare";
 import { ThemeProps, withTheme } from "../../theme/theme";
-import { Classes } from "@sudoo/jss";
+import { Classes, mergeClasses } from "@sudoo/jss";
 import { BlockStyle } from "../style/block.style";
 
 export type BlockProps = {
@@ -17,6 +17,8 @@ export type BlockProps = {
     readonly backgroundVideo?: string;
 
     readonly backgroundVideoZIndex?: number;
+
+    readonly height?: string;
 
     readonly style?: React.CSSProperties;
     readonly className?: string;
@@ -32,14 +34,16 @@ class BlockBase extends React.PureComponent<BlockWithThemeProps> {
 
         const theme: LandingTheme = this.props.theme;
 
-        const sectionStyle: React.CSSProperties = {
-            ...this._getBackgroundStyle(),
-            ...this.props.style,
-        };
-
         return (<section
-            className={this.props.className}
-            style={sectionStyle}
+            className={mergeClasses(
+                this._blockStyle.container,
+                this.props.className,
+            )}
+            style={{
+                height: this.props.height,
+                ...this._getBackgroundStyle(),
+                ...this.props.style,
+            }}
         >
             {this._renderVideo()}
             {this._renderChildren()}

@@ -9,6 +9,11 @@ import { landingStyleCollection } from "../../style";
 
 export const BlockStyleBase: Styles = {
 
+    container: {
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+    },
     videoContent: {
         position: 'relative',
     },
