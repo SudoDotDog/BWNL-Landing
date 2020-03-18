@@ -1,7 +1,7 @@
 /**
  * @author WMXPY
  * @namespace Landing_Components
- * @description Outlined Button
+ * @description Raised Button
  */
 
 import * as React from "react";
@@ -9,20 +9,20 @@ import { SizeType } from "../../common/style";
 import { LandingTheme } from "../../theme/declare";
 import { ThemeProps, withTheme } from "../../theme/theme";
 import { Classes } from "@sudoo/jss";
-import { OutlinedButtonStyle } from "../style/outlined-button.style";
+import { RaisedButtonStyle } from "../style/raised-button.style";
 
-export type OutlinedButtonProps = {
+export type RaisedButtonProps = {
 
     readonly verticalPadding?: SizeType;
 
     readonly style?: React.CSSProperties;
 };
 
-type OutlinedButtonWithThemeProps = OutlinedButtonProps & ThemeProps;
+type RaisedButtonWithThemeProps = RaisedButtonProps & ThemeProps;
 
-class OutlinedButtonBase extends React.PureComponent<OutlinedButtonWithThemeProps> {
+class RaisedButtonBase extends React.PureComponent<RaisedButtonWithThemeProps> {
 
-    private readonly _outlinedButtonStyle: Classes = OutlinedButtonStyle.use();
+    private readonly _raisedButtonStyle: Classes = RaisedButtonStyle.use();
 
     public render() {
 
@@ -38,4 +38,4 @@ class OutlinedButtonBase extends React.PureComponent<OutlinedButtonWithThemeProp
     }
 }
 
-export const OutlinedButton: React.ComponentType<OutlinedButtonProps> = withTheme(OutlinedButtonBase);
+export const RaisedButton: React.ComponentType<RaisedButtonProps> = withTheme(RaisedButtonBase);
