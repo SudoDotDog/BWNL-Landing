@@ -4,7 +4,7 @@
  * @description Raised Button
  */
 
-import { convertHexToRGBA, TRANSPARENT } from "@bwnl/shiny-inline";
+import { Color } from "@sudoo/color";
 import { Classes } from "@sudoo/jss";
 import * as React from "react";
 import { getComponentsButtonPaddingStyle, SizeType } from "../../common/style";
@@ -82,7 +82,7 @@ class RaisedButtonBase extends React.Component<RaisedButtonWithThemeProps, Raise
         return {
             color: backgroundColor,
             backgroundColor: emphasize
-                ? convertHexToRGBA(emphasizeColor, '.9')
+                ? Color.fromHEX(emphasizeColor).setAlpha(.9).toRGBA()
                 : emphasizeColor,
         };
     }

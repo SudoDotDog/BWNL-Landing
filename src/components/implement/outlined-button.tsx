@@ -4,7 +4,7 @@
  * @description Outlined Button
  */
 
-import { convertHexToRGBA, TRANSPARENT } from "@bwnl/shiny-inline";
+import { TRANSPARENT } from "@bwnl/shiny-inline";
 import { Classes } from "@sudoo/jss";
 import * as React from "react";
 import { getComponentsButtonPaddingStyle, SizeType } from "../../common/style";
@@ -12,6 +12,7 @@ import { LandingTheme } from "../../theme/declare";
 import { ThemeProps, withTheme } from "../../theme/theme";
 import { OutlinedButtonStyle } from "../style/outlined-button.style";
 import { LinkableButton } from "./linkable-button";
+import { Color } from "@sudoo/color";
 
 export type OutlinedButtonProps = {
 
@@ -84,7 +85,7 @@ class OutlinedButtonBase extends React.Component<OutlinedButtonWithThemeProps, O
                 ? emphasizeColor
                 : regularColor,
             backgroundColor: emphasize
-                ? convertHexToRGBA(emphasizeColor, '.1')
+                ? Color.fromHEX(emphasizeColor).setAlpha(.1).toRGBA()
                 : TRANSPARENT,
         };
     }
