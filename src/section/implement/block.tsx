@@ -32,6 +32,7 @@ class BlockBase extends React.PureComponent<BlockWithThemeProps> {
 
     public render() {
 
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const theme: LandingTheme = this.props.theme;
 
         return (<section

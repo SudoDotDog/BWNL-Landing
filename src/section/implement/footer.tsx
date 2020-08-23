@@ -36,6 +36,7 @@ class FooterBase extends React.PureComponent<FooterWithThemeProps> {
 
     public render() {
 
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const theme: LandingTheme = this.props.theme;
 
         return (<footer

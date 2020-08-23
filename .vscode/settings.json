@@ -20,9 +20,7 @@
         "triforce",
         "tshook"
     ],
-    "tslint.configFile": "typescript/tslint.json",
-    "files.eol": "\n",
-    "cSpell.enableFiletypes": [
-        "mdx"
-    ]
+    "eslint.options": {
+        "configFile": "./typescript/.eslintrc.json"
+    }
 }

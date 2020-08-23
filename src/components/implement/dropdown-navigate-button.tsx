@@ -47,6 +47,7 @@ class DropdownNavigateButtonBase extends React.Component<DropdownNavigateButtonW
 
     public render() {
 
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const theme: LandingTheme = this.props.theme;
 
         return (<div

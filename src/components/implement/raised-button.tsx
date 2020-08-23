@@ -82,6 +82,7 @@ class RaisedButtonBase extends React.Component<RaisedButtonWithThemeProps, Raise
         return {
             color: backgroundColor,
             backgroundColor: emphasize
+                // eslint-disable-next-line @typescript-eslint/no-magic-numbers
                 ? Color.fromHEX(emphasizeColor).setAlpha(.9).toRGBA()
                 : emphasizeColor,
         };

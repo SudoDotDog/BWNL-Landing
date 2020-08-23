@@ -85,6 +85,7 @@ class OutlinedButtonBase extends React.Component<OutlinedButtonWithThemeProps, O
                 ? emphasizeColor
                 : regularColor,
             backgroundColor: emphasize
+                // eslint-disable-next-line @typescript-eslint/no-magic-numbers
                 ? Color.fromHEX(emphasizeColor).setAlpha(.1).toRGBA()
                 : TRANSPARENT,
         };
