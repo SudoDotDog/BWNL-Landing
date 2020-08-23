@@ -49,7 +49,7 @@ class TiltCardBase extends React.PureComponent<TiltCardWithThemeProps> {
         if (elements.length > 0) {
             return {
                 transform: elements.join(' '),
-            }
+            };
         }
         return {};
     }

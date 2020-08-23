@@ -58,7 +58,7 @@ class FeatureBase extends React.PureComponent<FeatureWithThemeProps> {
             >
                 {this._renderContent()}
             </div>
-        </div>)
+        </div>);
     }
 
     private _renderContent() {

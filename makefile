@@ -6,6 +6,7 @@ tsc := node_modules/.bin/tsc
 docz := node_modules/.bin/docz
 mocha := node_modules/.bin/mocha
 ts_node := node_modules/.bin/ts-node
+eslint := node_modules/.bin/eslint
 
 .IGNORE: clean-linux
 

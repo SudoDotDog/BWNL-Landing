@@ -46,7 +46,7 @@ class SingleColumnBase extends React.PureComponent<SingleColumnWithThemeProps> {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-        }
+        };
     }
 }
 
