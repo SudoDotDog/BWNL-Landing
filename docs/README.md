@@ -6,3 +6,11 @@
 [![downloads](https://img.shields.io/npm/dm/@bwnl/landing.svg)](https://www.npmjs.com/package/@bwnl/landing)
 
 :star: Landing Page Components
+
+## Install
+
+```sh
+npm install @bwnl/landing --save
+# Or
+yarn add @bwnl/landing
+```
