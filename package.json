@@ -33,7 +33,7 @@
     "docz": "^2.4.0",
     "docz-theme-default": "^1.2.0",
     "ts-node": "^10.9.2",
-    "typescript": "^5.3.3"
+    "typescript": "^5.4.3"
   },
   "nyc": {
     "extension": [
